@@ -1,0 +1,43 @@
+server:
+  port: 8082
+
+
+spring:
+  application:
+    name: fzc-stock
+  datasource:
+    url: jdbc:mysql:///flamenco?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    hikari:
+      max-lifetime: 288300
+      maximum-pool-size: 9
+
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/java/main
+      additional-exclude: static/**,public/**,WEB-INF/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  typeAliasesPackage: com.fzc.fzcstock.model
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+
+
+
+

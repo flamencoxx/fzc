@@ -1,0 +1,52 @@
+server:
+  port: 8083
+
+
+spring:
+  data:
+    mongodb:
+      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
+      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
+      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
+
+
+
+  application:
+    name: fzc-futu
+  datasource:
+    url: jdbc:mysql:///flamenco?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    hikari:
+      max-lifetime: 288300
+      maximum-pool-size: 9
+
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/java/main
+      additional-exclude: static/**,public/**,WEB-INF/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  typeAliasesPackage: com.fzc.fzcfutu.model
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+
+
+
+
+
