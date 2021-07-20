@@ -112,6 +112,11 @@ public class Testing {
     }
 
     @Test
+    public void gitTesting(){
+
+    }
+
+    @Test
     public void CompanyOverview(){
 //        4757
         for (int stockId = 4247 ;stockId <=4757; stockId++) {
