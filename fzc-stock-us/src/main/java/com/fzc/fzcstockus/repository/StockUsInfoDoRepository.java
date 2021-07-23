@@ -19,5 +19,7 @@ public interface StockUsInfoDoRepository extends MongoRepository<StockUsInfoDo,I
 
     Page<StockUsInfoDo> findByMic(String mic,Pageable pageable);
 
+    StockUsInfoDo findStockUsInfoDoBySymbol(String symbol);
+
 
 }

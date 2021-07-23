@@ -112,6 +112,15 @@ public class Testing {
     }
 
     @Test
+    public void test2(){
+        String b = "abc";
+        float a = 15.6F;
+        System.out.println(b + a);
+        double c = 9.2D;
+        StringBuffer sb = new StringBuffer();
+    }
+
+    @Test
     public void gitTesting(){
 
     }
@@ -119,7 +128,7 @@ public class Testing {
     @Test
     public void CompanyOverview(){
 //        4757
-        for (int stockId = 4247 ;stockId <=4757; stockId++) {
+        for (int stockId = 4748 ;stockId <=4757; stockId++) {
             StockUsInfoDo stock = stockUsInfoDoRepository.findStockUsInfoDoById(stockId);
             String symbol = stock.getSymbol();
             String url = "https://www.alphavantage.co/query?function=OVERVIEW&symbol="+ symbol +"&apikey=3V71JD9X509YKRJY";
@@ -127,7 +136,7 @@ public class Testing {
             try {
                 RestTemplate restTemplate = RestTemplateUtils.getInstance();
                 json = restTemplate.getForObject(url, JSONObject.class);
-                }catch (Exception e){
+            }catch (Exception e){
                 e.printStackTrace();
                 try {
                     TimeUnit.SECONDS.sleep(10);

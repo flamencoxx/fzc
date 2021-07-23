@@ -8,6 +8,7 @@ import com.fzc.fzcstockus.model.BasicFinancials;
 import com.fzc.fzcstockus.model.Metric;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockUsInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -26,6 +27,7 @@ import java.util.List;
  * @date 2021/6/26 13:00
  */
 @CrossOrigin()
+@Slf4j
 @Controller
 @RequestMapping(value ="/UsRank")
 public class StockRankUsController {
@@ -37,7 +39,9 @@ public class StockRankUsController {
     private StockUsInfoDoRepository stockUsInfoDoRepository;
 
 
-//    从数据库抓10个数据:
+//    从数据库抓10个数据:通过pageable分页返回，bug返回的总页数需要乘10才能正常显示不然显示页数只有十分之一，很奇怪。
+//    美股股市排行，包含约4800支股票主要由纳斯达克全球以及纽约交易所组成。
+//    逻辑分为三种情况排序，全部股票都查询all，查询纽交所XNYS，查询纳斯达克XNAS。
 
     @GetMapping("Financial")
     public ResponseEntity<JSONObject> searchUsRank(
@@ -51,7 +55,11 @@ public class StockRankUsController {
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findAll(pageable);
 
-        int allPages = pageResult.getTotalPages();
+        log.info("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
+        log.info(pageResult.toString());
+
+        int allPages = pageResult.getTotalPages() * 10;
+        long totalElements = pageResult.getTotalElements();
 
 
         String NODE_ALL ="all";
@@ -207,7 +215,7 @@ public class StockRankUsController {
         }
 
 
-        System.out.println("调用了一次");
+        log.info("成功调用美股排行数据");
 
 //        System.out.println(resultJson.toString());
 

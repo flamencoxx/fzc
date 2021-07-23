@@ -893,16 +893,16 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findAll(pageable);
 
-        // 1 全部頁數
-        System.out.println(pageResult.getTotalPages());
-        // 1 全部筆數
-        System.out.println(pageResult.getTotalElements());
-        // 10 每頁筆數
-        System.out.println(pageResult.getSize());
-        // 0 目前頁號，0為第一頁
-        System.out.println(pageResult.getNumber());
-        // 1 目前頁筆數
-        System.out.println(pageResult.getNumberOfElements());
+//        // 1 全部頁數
+//        System.out.println(pageResult.getTotalPages());
+//        // 1 全部筆數
+//        System.out.println(pageResult.getTotalElements());
+//        // 10 每頁筆數
+//        System.out.println(pageResult.getSize());
+//        // 0 目前頁號，0為第一頁
+//        System.out.println(pageResult.getNumber());
+//        // 1 目前頁筆數
+//        System.out.println(pageResult.getNumberOfElements());
 
 //        ObjectMapper mapper = new ObjectMapper();
 //        String jsonString = null; // 轉成json字串
@@ -915,7 +915,7 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
 
         for(StockUsInfoDo s: stockUsInfoDoList){
             String symbol = s.getSymbol();
-            System.out.println(symbol);
+//            System.out.println(symbol);
         }
 
         return stockUsInfoDoList;
@@ -932,16 +932,16 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findByMic(mic,pageable);
 
-        // 1 全部頁數
-        System.out.println(pageResult.getTotalPages());
-        // 1 全部筆數
-        System.out.println(pageResult.getTotalElements());
-        // 10 每頁筆數
-        System.out.println(pageResult.getSize());
-        // 0 目前頁號，0為第一頁
-        System.out.println(pageResult.getNumber());
-        // 1 目前頁筆數
-        System.out.println(pageResult.getNumberOfElements());
+//        // 1 全部頁數
+//        System.out.println(pageResult.getTotalPages());
+//        // 1 全部筆數
+//        System.out.println(pageResult.getTotalElements());
+//        // 10 每頁筆數
+//        System.out.println(pageResult.getSize());
+//        // 0 目前頁號，0為第一頁
+//        System.out.println(pageResult.getNumber());
+//        // 1 目前頁筆數
+//        System.out.println(pageResult.getNumberOfElements());
 
        List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
 
@@ -949,7 +949,7 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
         for(StockUsInfoDo s: stockUsInfoDoList){
             String symbolStr = s.getSymbol();
             String micStr = s.getMic();
-            System.out.println(symbolStr+ ":" + micStr);
+//            System.out.println(symbolStr+ ":" + micStr);
         }
         return stockUsInfoDoList;
     }
