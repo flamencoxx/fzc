@@ -55,8 +55,10 @@ public class StockRankUsController {
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findAll(pageable);
 
-        log.info("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
-        log.info(pageResult.toString());
+//        log.debug("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
+//        log.debug(pageResult.toString());
+        System.out.println("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
+        System.out.println(pageResult.toString());
 
         int allPages = pageResult.getTotalPages() * 10;
         long totalElements = pageResult.getTotalElements();
@@ -215,7 +217,7 @@ public class StockRankUsController {
         }
 
 
-        log.info("成功调用美股排行数据");
+//        log.debug("成功调用美股排行数据");
 
 //        System.out.println(resultJson.toString());
 

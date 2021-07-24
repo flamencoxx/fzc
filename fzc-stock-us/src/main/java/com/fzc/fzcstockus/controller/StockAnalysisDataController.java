@@ -18,23 +18,45 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2021/7/22 16:10
  */
 @CrossOrigin()
-@Slf4j
 @Controller
+@Slf4j
 @RequestMapping(value ="/AnalysisData")
 public class StockAnalysisDataController {
+
     @Autowired
     private StockUsInfoDoRepository stockUsInfoDoRepository;
 
 //    @RequestParam(value ="code")String code
 
+
     @GetMapping("data")
     public ResponseEntity<JSONObject> getAnalysisData(@RequestParam(value ="code")String code){
 
 
-        log.info("收到前端传入的code:" + code);
-//        System.out.println(code);
+        System.out.println("收到前端传入的code:" + code);
 
         JSONObject analysisJson = JSONUtil.createObj();
+
+
+
+//        cardOne
+        JSONObject cardOneJson = JSONUtil.createObj();
+        cardOneJson.put("num",575);
+        analysisJson.put("cardOne",cardOneJson);
+
+//        cardTwo
+
+
+
+//        cardThree
+
+
+
+//        cardFour
+
+
+
+
 
 
 //        visitData

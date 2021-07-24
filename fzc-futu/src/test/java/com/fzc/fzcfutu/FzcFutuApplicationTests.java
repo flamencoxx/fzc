@@ -12,7 +12,6 @@ import com.fzc.fzcfutu.testing.yahoo;
 import com.fzc.fzcfutu.tool.RestClient;
 import org.apache.commons.math.stat.descriptive.summary.Product;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -31,7 +30,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 class FzcFutuApplicationTests {
 
@@ -157,7 +155,8 @@ class FzcFutuApplicationTests {
         System.out.println(result);
 
     }
-    
+
+//    A股经济数据
     @Test
     public void searchName(){
         for (int i = 4322;i <=4323;i++){
