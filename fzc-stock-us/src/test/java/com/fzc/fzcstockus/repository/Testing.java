@@ -27,6 +27,8 @@ public class Testing {
     private StockUsInfoDoRepository stockUsInfoDoRepository;
 
 
+
+
     @Test
     public void insertUsList(){
         String symbol = "https://finnhub.io/api/v1/stock/symbol?exchange=US&token=c32mkoaad3ieculvpcsg";
@@ -99,6 +101,17 @@ public class Testing {
         for(StockUsInfoDo s:stockUsInfoDoList){
             stockUsInfoDoRepository.save(s);
         }
+    }
+
+    @Test
+    public void findBySymbol(){
+        StockUsInfoDo result = stockUsInfoDoRepository.findStockUsInfoDoBySymbol("SHABI");
+        if( result != null){
+            System.out.println("ok");
+        }else{
+            System.out.println("false");
+        }
+        System.out.println(result);
     }
 
     @Test

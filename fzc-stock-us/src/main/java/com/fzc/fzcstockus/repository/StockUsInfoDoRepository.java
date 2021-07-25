@@ -21,5 +21,7 @@ public interface StockUsInfoDoRepository extends MongoRepository<StockUsInfoDo,I
 
     StockUsInfoDo findStockUsInfoDoBySymbol(String symbol);
 
+//    StockUsInfoDo findStockUsInfoDoBySymbol(String symbol);
+
 
 }

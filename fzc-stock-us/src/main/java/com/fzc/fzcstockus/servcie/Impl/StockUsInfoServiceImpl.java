@@ -29,6 +29,9 @@ import java.util.concurrent.TimeUnit;
 public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, StockUsInfo> implements StockUsInfoService {
 
     @Autowired
+    private StockUsInfoService stockUsInfoService;
+
+    @Autowired
     private StockUsDORepository stockUsDORepository;
 
     @Autowired

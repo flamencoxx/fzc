@@ -1,9 +1,6 @@
 package com.fzc.fzcstockus.repository;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fzc.fzcstockus.DO.StockUsInfoDo;
-import com.fzc.fzcstockus.servcie.StockUsInfoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,13 +39,7 @@ public class PageTesting {
         System.out.println(pageResult.getNumber()); // 0 目前頁號，0為第一頁
         System.out.println(pageResult.getNumberOfElements()); // 1 目前頁筆數
 
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = null; // 轉成json字串
-        try {
-            jsonString = mapper.writeValueAsString(pageResult.getContent());
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+
         List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
 
         for(StockUsInfoDo s: stockUsInfoDoList){
@@ -73,13 +64,13 @@ public class PageTesting {
         System.out.println(pageResult.getNumber()); // 0 目前頁號，0為第一頁
         System.out.println(pageResult.getNumberOfElements()); // 1 目前頁筆數
 
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = null; // 轉成json字串
-        try {
-            jsonString = mapper.writeValueAsString(pageResult.getContent());
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+//        ObjectMapper mapper = new ObjectMapper();
+//        String jsonString = null; // 轉成json字串
+//        try {
+//            jsonString = mapper.writeValueAsString(pageResult.getContent());
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
         List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
 
         for(StockUsInfoDo s: stockUsInfoDoList){

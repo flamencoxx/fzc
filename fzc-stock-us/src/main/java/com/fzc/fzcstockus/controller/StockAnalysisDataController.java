@@ -4,6 +4,7 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
+import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,12 +27,26 @@ public class StockAnalysisDataController {
     @Autowired
     private StockUsInfoDoRepository stockUsInfoDoRepository;
 
+    @Autowired
+    private StockBasicFinancialService stockBasicFinancialService;
+
 //    @RequestParam(value ="code")String code
+
+
+
+
+    @GetMapping("update")
+    public ResponseEntity<String> updateBasic(@RequestParam(value = "code")String symbol){
+        stockBasicFinancialService.updateStockBasicFinancial(symbol);
+        return ResponseEntity.ok("200");
+    }
 
 
     @GetMapping("data")
     public ResponseEntity<JSONObject> getAnalysisData(@RequestParam(value ="code")String code){
 
+
+//        log.info(code);
 
         System.out.println("收到前端传入的code:" + code);
 
