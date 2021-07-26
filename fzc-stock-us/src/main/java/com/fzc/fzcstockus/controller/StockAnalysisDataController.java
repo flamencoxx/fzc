@@ -47,6 +47,7 @@ public class StockAnalysisDataController {
 
 
 //        log.info(code);
+        log.info("收到前端传入的code:" + code);
 
         System.out.println("收到前端传入的code:" + code);
 

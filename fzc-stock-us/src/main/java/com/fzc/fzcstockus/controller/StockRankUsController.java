@@ -48,12 +48,43 @@ public class StockRankUsController {
             @RequestParam(value="pageIndex")int pageIndex,
             @RequestParam(value="pageSize")int pageSize,
             @RequestParam(value="sort")String sort,
-            @RequestParam(value="node")String node){
+            @RequestParam(value="node")String node,
+            @RequestParam(value="code")String code){
 
+        String NODE_ALL ="all";
+
+        String NODE_XNYS ="XNYS";
+
+        String NODE_XNAS ="XNAS";
 
         PageRequest pageable = PageRequest.of(pageIndex, pageSize, Sort.by(sort).ascending());
 
-        Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findAll(pageable);
+        Page<StockUsInfoDo> pageResult = null;
+
+        if(code.isEmpty()){
+            if(node.equals(NODE_ALL)){
+                pageResult  = stockUsInfoDoRepository.findAll(pageable);
+            }else if(node.equals(NODE_XNYS)){
+                pageResult  = stockUsInfoDoRepository.findByMic(node,pageable);
+            }else if(node.equals(NODE_XNAS)){
+                pageResult  = stockUsInfoDoRepository.findByMic(node,pageable);
+            }
+
+        }else{
+            if(node.equals(NODE_ALL)){
+                pageResult  = stockUsInfoDoRepository.findBySymbolLike(code,pageable);
+            }else if(node.equals(NODE_XNYS)){
+                pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code,pageable);
+            }else if(node.equals(NODE_XNAS)){
+                pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code,pageable);
+            }
+        }
+
+//        PageRequest pageable = PageRequest.of(pageIndex, pageSize, Sort.by(sort).ascending());
+//
+//        Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findAll(pageable);
+
+
 
 //        log.debug("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
 //        log.debug(pageResult.toString());
@@ -64,11 +95,7 @@ public class StockRankUsController {
         long totalElements = pageResult.getTotalElements();
 
 
-        String NODE_ALL ="all";
 
-        String NODE_XNYS ="XNYS";
-
-        String NODE_XNAS ="XNAS";
 
 
         JSONObject resultJson = JSONUtil.createObj();
@@ -82,7 +109,16 @@ public class StockRankUsController {
             allJson.put("PageIndex",pageIndex);
             allJson.put("PageSize",pageSize);
 
-            List<StockUsInfoDo> stockUsInfoDoList = stockUsInfoService.findAllByPage(pageIndex, pageSize, sort);
+            List<StockUsInfoDo> stockUsInfoDoList;
+            if(code.isEmpty()){
+                stockUsInfoDoList = stockUsInfoService.findAllByPage(pageIndex - 1 , pageSize, sort);
+
+            }else{
+                stockUsInfoDoList = stockUsInfoService.findAllByPageAndCode(pageIndex - 1 , pageSize, sort,code);
+
+            }
+
+
 
             JSONArray array = new JSONArray();
             for(StockUsInfoDo stockUsInfoDo:stockUsInfoDoList){
@@ -127,7 +163,14 @@ public class StockRankUsController {
             allJson.put("PageIndex",pageIndex);
             allJson.put("allPages",allPages);
             allJson.put("PageSize",pageSize);
-            List<StockUsInfoDo> stockUsInfoDoList = stockUsInfoService.findByMicPage(pageIndex, pageSize, NODE_XNYS, sort);
+
+            List<StockUsInfoDo> stockUsInfoDoList;
+            if(code.isEmpty()){
+                stockUsInfoDoList = stockUsInfoService.findByMicPage(pageIndex - 1, pageSize, NODE_XNYS, sort);
+            }else {
+                stockUsInfoDoList = stockUsInfoService.findByMicPageAndCode(pageIndex - 1, pageSize, NODE_XNYS, sort,code);
+            }
+
 
             JSONArray array = new JSONArray();
             for(StockUsInfoDo stockUsInfoDo:stockUsInfoDoList){
@@ -174,7 +217,14 @@ public class StockRankUsController {
             allJson.put("PageIndex",pageIndex);
             allJson.put("allPages",allPages);
             allJson.put("PageSize",pageSize);
-            List<StockUsInfoDo> stockUsInfoDoList = stockUsInfoService.findByMicPage(pageIndex, pageSize, NODE_XNAS, sort);
+
+
+            List<StockUsInfoDo> stockUsInfoDoList;
+            if(code.isEmpty()){
+                stockUsInfoDoList = stockUsInfoService.findByMicPage(pageIndex - 1, pageSize, NODE_XNAS, sort);
+            }else {
+                stockUsInfoDoList = stockUsInfoService.findByMicPageAndCode(pageIndex - 1, pageSize, NODE_XNAS, sort,code);
+            }
 
 
             JSONArray array = new JSONArray();

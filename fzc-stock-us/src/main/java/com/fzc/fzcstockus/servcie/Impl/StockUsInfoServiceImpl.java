@@ -878,7 +878,7 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
 //        System.out.println(dataJson.toString());
 
 
-        String result = json.toString();
+//        String result = json.toString();
 //        System.out.println(result);
         return dataJson;
     }
@@ -952,4 +952,80 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
         }
         return stockUsInfoDoList;
     }
+
+    @Override
+    public List<StockUsInfoDo> findAllByPageAndCode(int page,int size,String sort,String code) {
+//        int page = 0;
+//        int size = 10;
+
+        PageRequest pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
+
+        Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findBySymbolLike(code,pageable);
+
+//        // 1 全部頁數
+//        System.out.println(pageResult.getTotalPages());
+//        // 1 全部筆數
+//        System.out.println(pageResult.getTotalElements());
+//        // 10 每頁筆數
+//        System.out.println(pageResult.getSize());
+//        // 0 目前頁號，0為第一頁
+//        System.out.println(pageResult.getNumber());
+//        // 1 目前頁筆數
+//        System.out.println(pageResult.getNumberOfElements());
+
+//        ObjectMapper mapper = new ObjectMapper();
+//        String jsonString = null; // 轉成json字串
+//        try {
+//            jsonString = mapper.writeValueAsString(pageResult.getContent());
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+        List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
+
+        for(StockUsInfoDo s: stockUsInfoDoList){
+            String symbol = s.getSymbol();
+//            System.out.println(symbol);
+        }
+
+        return stockUsInfoDoList;
+    }
+
+
+
+    @Override
+    public List<StockUsInfoDo> findByMicPageAndCode(int page, int size, String mic,String sort,String code) {
+
+//        String mic = "XNYS";
+//        int page = 0;  // 查詢頁數，從0開始為第一頁
+//        int size = 500; // 每頁筆數，設為每頁10筆
+
+        PageRequest pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
+
+        Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findByMicAndSymbolLike(mic,code,pageable);
+
+//        // 1 全部頁數
+//        System.out.println(pageResult.getTotalPages());
+//        // 1 全部筆數
+//        System.out.println(pageResult.getTotalElements());
+//        // 10 每頁筆數
+//        System.out.println(pageResult.getSize());
+//        // 0 目前頁號，0為第一頁
+//        System.out.println(pageResult.getNumber());
+//        // 1 目前頁筆數
+//        System.out.println(pageResult.getNumberOfElements());
+
+        List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
+
+
+        for(StockUsInfoDo s: stockUsInfoDoList){
+            String symbolStr = s.getSymbol();
+            String micStr = s.getMic();
+//            System.out.println(symbolStr+ ":" + micStr);
+        }
+        return stockUsInfoDoList;
+    }
 }
+
+
+
+

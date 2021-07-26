@@ -24,4 +24,8 @@ public interface StockUsInfoService extends IService<StockUsInfo> {
     List<StockUsInfoDo> findAllByPage(int page,int size,String sort);
 
     List<StockUsInfoDo> findByMicPage(int page,int size,String mic, String sort);
+
+    List<StockUsInfoDo> findAllByPageAndCode(int page,int size,String sort,String code);
+
+    List<StockUsInfoDo> findByMicPageAndCode(int page,int size,String mic, String sort,String code);
 }
