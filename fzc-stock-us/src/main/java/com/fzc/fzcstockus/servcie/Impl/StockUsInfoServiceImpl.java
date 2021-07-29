@@ -923,24 +923,11 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
     @Override
     public List<StockUsInfoDo> findByMicPage(int page, int size, String mic,String sort) {
 
-//        String mic = "XNYS";
-//        int page = 0;  // 查詢頁數，從0開始為第一頁
-//        int size = 500; // 每頁筆數，設為每頁10筆
 
         PageRequest pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findByMic(mic,pageable);
 
-//        // 1 全部頁數
-//        System.out.println(pageResult.getTotalPages());
-//        // 1 全部筆數
-//        System.out.println(pageResult.getTotalElements());
-//        // 10 每頁筆數
-//        System.out.println(pageResult.getSize());
-//        // 0 目前頁號，0為第一頁
-//        System.out.println(pageResult.getNumber());
-//        // 1 目前頁筆數
-//        System.out.println(pageResult.getNumberOfElements());
 
        List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
 
@@ -955,31 +942,13 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
 
     @Override
     public List<StockUsInfoDo> findAllByPageAndCode(int page,int size,String sort,String code) {
-//        int page = 0;
-//        int size = 10;
+
 
         PageRequest pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findBySymbolLike(code,pageable);
 
-//        // 1 全部頁數
-//        System.out.println(pageResult.getTotalPages());
-//        // 1 全部筆數
-//        System.out.println(pageResult.getTotalElements());
-//        // 10 每頁筆數
-//        System.out.println(pageResult.getSize());
-//        // 0 目前頁號，0為第一頁
-//        System.out.println(pageResult.getNumber());
-//        // 1 目前頁筆數
-//        System.out.println(pageResult.getNumberOfElements());
 
-//        ObjectMapper mapper = new ObjectMapper();
-//        String jsonString = null; // 轉成json字串
-//        try {
-//            jsonString = mapper.writeValueAsString(pageResult.getContent());
-//        } catch (JsonProcessingException e) {
-//            e.printStackTrace();
-//        }
         List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
 
         for(StockUsInfoDo s: stockUsInfoDoList){
@@ -1002,17 +971,6 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
         PageRequest pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findByMicAndSymbolLike(mic,code,pageable);
-
-//        // 1 全部頁數
-//        System.out.println(pageResult.getTotalPages());
-//        // 1 全部筆數
-//        System.out.println(pageResult.getTotalElements());
-//        // 10 每頁筆數
-//        System.out.println(pageResult.getSize());
-//        // 0 目前頁號，0為第一頁
-//        System.out.println(pageResult.getNumber());
-//        // 1 目前頁筆數
-//        System.out.println(pageResult.getNumberOfElements());
 
         List<StockUsInfoDo> stockUsInfoDoList = pageResult.toList();
 

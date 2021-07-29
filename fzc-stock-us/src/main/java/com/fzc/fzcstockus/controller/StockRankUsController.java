@@ -72,11 +72,11 @@ public class StockRankUsController {
 
         }else{
             if(node.equals(NODE_ALL)){
-                pageResult  = stockUsInfoDoRepository.findBySymbolLike(code,pageable);
+                pageResult  = stockUsInfoDoRepository.findBySymbolLike(code.toUpperCase(),pageable);
             }else if(node.equals(NODE_XNYS)){
-                pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code,pageable);
+                pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code.toUpperCase(),pageable);
             }else if(node.equals(NODE_XNAS)){
-                pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code,pageable);
+                pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code.toUpperCase(),pageable);
             }
         }
 
@@ -86,10 +86,10 @@ public class StockRankUsController {
 
 
 
-//        log.debug("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
-//        log.debug(pageResult.toString());
-        System.out.println("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
-        System.out.println(pageResult.toString());
+        log.info("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
+        log.info(pageResult.toString());
+//        System.out.println("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
+//        System.out.println(pageResult.toString());
 
         int allPages = pageResult.getTotalPages() * 10;
         long totalElements = pageResult.getTotalElements();
@@ -114,7 +114,7 @@ public class StockRankUsController {
                 stockUsInfoDoList = stockUsInfoService.findAllByPage(pageIndex - 1 , pageSize, sort);
 
             }else{
-                stockUsInfoDoList = stockUsInfoService.findAllByPageAndCode(pageIndex - 1 , pageSize, sort,code);
+                stockUsInfoDoList = stockUsInfoService.findAllByPageAndCode(pageIndex - 1 , pageSize, sort,code.toUpperCase());
 
             }
 
@@ -168,7 +168,7 @@ public class StockRankUsController {
             if(code.isEmpty()){
                 stockUsInfoDoList = stockUsInfoService.findByMicPage(pageIndex - 1, pageSize, NODE_XNYS, sort);
             }else {
-                stockUsInfoDoList = stockUsInfoService.findByMicPageAndCode(pageIndex - 1, pageSize, NODE_XNYS, sort,code);
+                stockUsInfoDoList = stockUsInfoService.findByMicPageAndCode(pageIndex - 1, pageSize, NODE_XNYS, sort,code.toUpperCase());
             }
 
 
@@ -223,7 +223,7 @@ public class StockRankUsController {
             if(code.isEmpty()){
                 stockUsInfoDoList = stockUsInfoService.findByMicPage(pageIndex - 1, pageSize, NODE_XNAS, sort);
             }else {
-                stockUsInfoDoList = stockUsInfoService.findByMicPageAndCode(pageIndex - 1, pageSize, NODE_XNAS, sort,code);
+                stockUsInfoDoList = stockUsInfoService.findByMicPageAndCode(pageIndex - 1, pageSize, NODE_XNAS, sort,code.toUpperCase());
             }
 
 
@@ -267,7 +267,7 @@ public class StockRankUsController {
         }
 
 
-//        log.debug("成功调用美股排行数据");
+        log.info("成功调用美股排行数据");
 
 //        System.out.println(resultJson.toString());
 

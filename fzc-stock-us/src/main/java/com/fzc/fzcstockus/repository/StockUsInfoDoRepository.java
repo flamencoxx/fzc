@@ -7,6 +7,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
+//
+//操作mongoDB数据库重要的类，操作stock_us_important表。
+//
+
 /**
  * @author 11615
  */
@@ -31,6 +35,8 @@ public interface StockUsInfoDoRepository extends MongoRepository<StockUsInfoDo,I
     StockUsInfoDo findStockUsInfoDoBySymbol(String symbol);
 
 //    StockUsInfoDo findStockUsInfoDoBySymbol(String symbol);
+
+    Boolean existsBySymbol(String symbol);
 
 
 }

@@ -32,8 +32,6 @@ public class StockBasicFinancialServiceImpl extends ServiceImpl<StockUsInfoMappe
     private StockBasicFinancialService stockBasicFinancialService;
 
 
-
-
     @Override
     public void updateStockBasicFinancial(String symbol) {
 
