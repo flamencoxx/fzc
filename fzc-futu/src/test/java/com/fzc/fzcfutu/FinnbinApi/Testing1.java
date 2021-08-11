@@ -1,5 +1,6 @@
 package com.fzc.fzcfutu.FinnbinApi;
 
+import com.fzc.fzcfutu.DO.StockInfoDO;
 import com.fzc.fzcfutu.repository.StockInfoRepository;
 import com.fzc.fzcfutu.service.StockInfoService;
 
@@ -22,7 +23,7 @@ public class Testing1 {
 
     @Test
     public void findAllUsList(){
-
+        StockInfoDO stockInfoDO = stockInfoRepository.findStockInfoDOBySymbol("002603");
     }
 
 }

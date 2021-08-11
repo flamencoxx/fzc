@@ -634,7 +634,7 @@ public class BasicFinanceTesting {
 
 
             for(CashRatio s: cashRatioList){
-                System.out.println(s);
+//                System.out.println(s);
             }
 
 

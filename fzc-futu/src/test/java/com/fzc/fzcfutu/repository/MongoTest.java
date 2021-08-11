@@ -73,14 +73,16 @@ public class MongoTest {
 
     @Test
     public void refreshAllStockHistory(){
-        for (int i = 3501;i <=4322;i++) {
+
+//        1 - 4322
+        for (int i = 1;i <=4322;i++) {
 
             StockInfoDO stockInfoDO = stockInfoRepository.findStockInfoDOById(i);
 
             String symbol = stockInfoDO.getSymbol();
             String code = stockInfoDO.getCode();
             String[] codeSplit = code.split("\\.");
-            System.out.println(codeSplit[0] + ":" + codeSplit[1]);
+//            System.out.println(codeSplit[0] + ":" + codeSplit[1]);
             String url;
             if (codeSplit[1].equals("SZ")){
 
@@ -97,7 +99,7 @@ public class MongoTest {
             RestTemplate restTemplate = RestTemplateUtils.getInstance();
             try {
                 result = new String(restTemplate.getForObject(url, String.class).getBytes("ISO-8859-1"),"gb2312");
-                System.out.println(result);
+//                System.out.println(result);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -111,15 +113,15 @@ public class MongoTest {
             String[] dataArray1 = str1.split(",");
             List<String> dataList1 = new ArrayList<String>(Arrays.asList(dataArray1));
             for(int j = 0;j < dataList1.size();j++){
-                System.out.println(dataList1.get(j));
+//                System.out.println(dataList1.get(j));
             }
 
             for(int k = 1; k < rows.size();k++){
-                System.out.println(k);
+//                System.out.println(k);
                 String str = rows.get(k);
                 String[] dataArray = str.split(",");
                 List<String> dataList = new ArrayList<String>(Arrays.asList(dataArray));
-                System.out.println(dataList.get(0)+ "--"+dataList.get(1));
+//                System.out.println(dataList.get(0)+ "--"+dataList.get(1));
 
                 if(dataList.get(0).equals("None")){
                     dataList.set(0,"0");
@@ -171,11 +173,11 @@ public class MongoTest {
                 }
 
                 StockInfoDO.StockHistoricalData stockHistoricalData = new StockInfoDO.StockHistoricalData(dataList.get(0),dataList.get(1),dataList.get(2),Double.parseDouble(dataList.get(3)),Double.parseDouble(dataList.get(4)),Double.parseDouble(dataList.get(5)),Double.parseDouble(dataList.get(6)),Double.parseDouble(dataList.get(7)),Double.parseDouble(dataList.get(8)),Double.parseDouble(dataList.get(9)),Double.parseDouble(dataList.get(10)),Double.parseDouble(dataList.get(11)),Double.parseDouble(dataList.get(12)),Double.parseDouble(dataList.get(13)),Double.parseDouble(dataList.get(14)),dataList.get(15));
-                System.out.println(stockHistoricalData.toString());
                 stockHistoricalDataList.add(stockHistoricalData);
             }
             stockInfoDO.setStockHistoricalDataList(stockHistoricalDataList);
             stockInfoRepository.save(stockInfoDO);
+            System.out.println(stockInfoDO.getCode());
 
 
         }

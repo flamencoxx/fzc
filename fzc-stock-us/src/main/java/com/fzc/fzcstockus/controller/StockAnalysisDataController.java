@@ -36,14 +36,20 @@ public class StockAnalysisDataController {
 
 
     @GetMapping("update")
-    public ResponseEntity<String> updateBasic(@RequestParam(value = "code")String symbol){
-        stockBasicFinancialService.updateStockBasicFinancial(symbol);
+    public ResponseEntity<String> updateBasic(@RequestParam(value = "code")String code){
+        stockBasicFinancialService.updateStockBasicFinancial(code);
         return ResponseEntity.ok("200");
     }
 
 
     @GetMapping("data")
     public ResponseEntity<JSONObject> getAnalysisData(@RequestParam(value ="code")String code){
+
+
+        code = code.toUpperCase();
+
+
+//        stockBasicFinancialService.updateStockBasicFinancial(code);
 
 
 //        log.info(code);

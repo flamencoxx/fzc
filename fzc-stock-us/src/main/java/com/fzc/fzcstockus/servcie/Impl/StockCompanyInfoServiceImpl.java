@@ -35,17 +35,47 @@ public class StockCompanyInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, 
 
             StockUsInfoDo stock = stockUsInfoDoRepository.findStockUsInfoDoBySymbol(symbol);
             String url = "https://www.alphavantage.co/query?function=OVERVIEW&symbol="+ symbol +"&apikey=O0RLB5ZEL3N1GC1U";
-            RestTemplate restTemplate = RestTemplateUtils.getInstance();
-            JSONObject json = restTemplate.getForObject(url, JSONObject.class);
-            assert json != null;
-            if(json.isEmpty()){
-                return null;
+            JSONObject json = null;
+            try {
+                    RestTemplate restTemplate = RestTemplateUtils.getInstance();
+                    json = restTemplate.getForObject(url, JSONObject.class);
+            }catch (Exception e){
+                    e.printStackTrace();
+                    try {
+                            TimeUnit.SECONDS.sleep(10);
+                            try{
+                                    RestTemplate restTemplate = RestTemplateUtils.getInstance();
+                                    json = restTemplate.getForObject(url, JSONObject.class);
+                            }catch (Exception k){
+                                    k.printStackTrace();
+                            }
+
+                    } catch (InterruptedException interruptedException) {
+                            interruptedException.printStackTrace();
+                    }
             }
-            String Name = json.get("Name").toString();
+//            RestTemplate restTemplate = RestTemplateUtils.getInstance();
+//            JSONObject json = restTemplate.getForObject(url, JSONObject.class);
+            assert json != null;
+            
+            String Name = null;
+            try {
+                    Name = json.get("Name").toString();
+            }catch (NullPointerException e){
+                    e.printStackTrace();
+            }
+//            String Name = json.get("Name").toString();
             String Description = json.get("Description").toString();
             String Sector = json.get("Sector").toString();
             String Industry = json.get("Industry").toString();
-            String FullTimeEmployees = json.get("FullTimeEmployees").toString();
+            String FullTimeEmployees;
+            try {
+                    FullTimeEmployees = json.get("FullTimeEmployees").toString();
+            }catch(NullPointerException e){
+                    e.printStackTrace();
+                    FullTimeEmployees = null;
+            }
+//            String FullTimeEmployees = json.get("FullTimeEmployees").toString();
             String MarketCapitalization = json.get("MarketCapitalization").toString();
             String EBITDA = json.get("EBITDA").toString();
             String PERatio = json.get("PERatio").toString();

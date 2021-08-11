@@ -3,6 +3,10 @@ package com.fzc.fzcstockus.repository;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.fzc.fzcstockus.DO.StockUsInfoDo;
+import com.fzc.fzcstockus.model.BasicFinancials;
+import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
+import com.fzc.fzcstockus.servcie.StockCompanyInfoService;
 import com.fzc.fzcstockus.servcie.StockUsInfoService;
 import com.fzc.fzcstockus.tool.RestTemplateUtils;
 import org.junit.jupiter.api.Test;
@@ -24,6 +28,14 @@ public class HistoryTest {
 
     @Autowired
     private StockUsInfoService stockUsInfoService;
+
+
+
+    @Autowired
+    private StockBasicFinancialService stockBasicFinancialService;
+
+    @Autowired
+    private StockCompanyInfoService stockCompanyInfoService;
 
 
 
@@ -100,6 +112,24 @@ public class HistoryTest {
     @Test
     public void searchTest(){
         JSONObject json = stockUsInfoService.searchUsHistoryDay("IBM");
-//        System.out.println(json.toString());
+        System.out.println(json.toString());
+    }
+
+    @Test
+    public void details(){
+        JSONObject jsonObject = JSONUtil.createObj();
+
+        String code = "IBM";
+
+        StockUsInfoDo stockUsInfoDo = new StockUsInfoDo();
+        BasicFinancials basicFinancials = new BasicFinancials();
+        basicFinancials = stockBasicFinancialService.findBasicFinancialsBySymbol(code);
+        stockUsInfoDo = stockCompanyInfoService.findStockCompanyInfo(code);
+        String description = stockUsInfoDo.getCompanyOverview().getDescription();
+
+
+        jsonObject.put("description",description);
+
+        System.out.println(description);
     }
 }

@@ -19,6 +19,9 @@
         <module>fzc-user</module>
         <module>fzc-stock</module>
         <module>fzc-futu</module>
+        <module>fzc-common</module>
+        <module>fzc-gateway</module>
+        <module>fzc-stock-us</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

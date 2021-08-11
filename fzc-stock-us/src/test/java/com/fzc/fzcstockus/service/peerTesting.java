@@ -48,5 +48,11 @@ public class peerTesting {
 //        System.out.println(list);
     }
 
+    @Test
+    public void testing(){
+        int i = 2 << 3 ;
+        System.out.println(i);
+    }
+
 
 }
