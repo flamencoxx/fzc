@@ -31,7 +31,7 @@ public class test163 {
     @Test
     public void testingFinancial(){
 //        4322
-        for (int i = 1;i <=4322;i++){
+        for (int i = 1;i <=1;i++){
 
             StockInfoDO stockInfoDO = stockInfoRepository.findStockInfoDOById(i);
 

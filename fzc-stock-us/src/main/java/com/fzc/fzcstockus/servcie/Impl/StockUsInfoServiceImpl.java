@@ -817,7 +817,7 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
         Long timeStamp = System.currentTimeMillis();
         String timeStampStr = timeStamp.toString().substring(0,10);
 
-        String url = "https://finnhub.io/api/v1/stock/candle?symbol="+ code +"&resolution=D&from=1515298999&to="+ timeStampStr +"&token=c32mkoaad3ieculvpcsg";
+        String url = "https://finnhub.io/api/v1/stock/candle?symbol="+ code +"&resolution=D&from=615298999&to="+ timeStampStr +"&token=c32mkoaad3ieculvpcsg";
         RestTemplate restTemplate = RestTemplateUtils.getInstance();
         JSONObject json = restTemplate.getForObject(url, JSONObject.class);
         System.out.println("请求美股历史数据接口: "+ code);

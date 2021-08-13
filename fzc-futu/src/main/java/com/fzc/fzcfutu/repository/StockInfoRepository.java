@@ -15,4 +15,6 @@ public interface StockInfoRepository extends MongoRepository<StockInfoDO,Integer
     StockInfoDO findStockInfoDOByName(String name);
 
 
+
+
 }
