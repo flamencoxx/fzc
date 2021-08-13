@@ -9,9 +9,9 @@
 	<id>fzc-stock</id>
 
 	<classpath>
-		<dir name="D:/github/flamenco/project/fzc/fzc-stock/target/classes">
+		<dir name="B:/github/flamenco/project/fzc/fzc-stock/target/classes">
 		</dir>
-		<dir name="D:/github/flamenco/project/fzc/fzc-stock/src/main/java">
+		<dir name="B:/github/flamenco/project/fzc/fzc-stock/src/main/java">
 		</dir>
 	</classpath>
 

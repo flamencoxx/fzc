@@ -72,7 +72,7 @@ public class StockCompanyInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, 
             try {
                     FullTimeEmployees = json.get("FullTimeEmployees").toString();
             }catch(NullPointerException e){
-                    e.printStackTrace();
+//                    e.printStackTrace();
                     FullTimeEmployees = null;
             }
 //            String FullTimeEmployees = json.get("FullTimeEmployees").toString();

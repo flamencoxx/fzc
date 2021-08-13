@@ -46,7 +46,7 @@ public class FetchCompanyInfo implements Runnable{
     }
     @Override
     public void run() {
-        StockUsInfoDo stockUsInfoDo = stockCompanyInfoService.findStockCompanyInfo(code.toUpperCase());
+        StockUsInfoDo stockUsInfoDo = stockCompanyInfoService.findStockCompanyInfo(code);
 //        System.out.println("成功刷新companyInfo");
         log.info("成功刷新companyInfo");
     }

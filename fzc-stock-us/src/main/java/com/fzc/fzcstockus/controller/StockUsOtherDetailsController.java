@@ -62,6 +62,7 @@ public class StockUsOtherDetailsController {
         String pegRatio = stockUsInfoDo.getCompanyOverview().getPEGRatio();
         String revenue = stockUsInfoDo.getCompanyOverview().getRevenueTTM();
         String grossProfit = stockUsInfoDo.getCompanyOverview().getGrossProfitTTM();
+        String sector = stockUsInfoDo.getCompanyOverview().getSector();
 
 
 //        BasicFinancials basicFinancials = new BasicFinancials();
@@ -78,6 +79,7 @@ public class StockUsOtherDetailsController {
         jsonObject.put("PEGRatio",pegRatio);
         jsonObject.put("RevenueTTM",revenue);
         jsonObject.put("GrossProfitTTM",grossProfit);
+        jsonObject.put("Sector",sector);
 
 
 

@@ -9,10 +9,10 @@
 	<id>fzc-futu</id>
 
 	<classpath>
-		<dir name="D:/github/flamenco/project/fzc/fzc-futu/target/classes">
+		<dir name="B:/github/flamenco/project/fzc/fzc-futu/target/classes">
 		</dir>
 
-		<dir name="D:/github/flamenco/project/fzc/fzc-futu/src/main/java">
+		<dir name="B:/github/flamenco/project/fzc/fzc-futu/src/main/java">
 		</dir>
 	</classpath>
 
