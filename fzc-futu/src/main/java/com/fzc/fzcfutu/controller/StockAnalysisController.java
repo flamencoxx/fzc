@@ -12,6 +12,7 @@ import yahoofinance.Stock;
  * @author Flamenco.xxx
  * @date 2021/8/13 18:12
  */
+
 @Controller
 public class StockAnalysisController {
 
@@ -26,6 +27,8 @@ public class StockAnalysisController {
 
     @Autowired
     private StockInfoRepository stockInfoRepository;
+
+
 
 
 }

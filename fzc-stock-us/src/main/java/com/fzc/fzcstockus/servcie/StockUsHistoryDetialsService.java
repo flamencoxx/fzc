@@ -10,4 +10,6 @@ import com.fzc.fzcstockus.model.StockUsInfo;
 public interface StockUsHistoryDetialsService extends IService<StockUsInfo> {
 
     String showDescription(String code);
+
+    boolean fetchHistoryPrice(String symbol);
 }

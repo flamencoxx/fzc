@@ -1,6 +1,8 @@
 package com.fzc.fzcstockus.DO;
 
 import com.fzc.fzcstockus.model.BasicFinancials;
+import com.fzc.fzcstockus.model.HistoryPrice;
+import com.fzc.fzcstockus.model.PERatio;
 import com.fzc.fzcstockus.mongo.IncIdEntity;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -640,6 +642,10 @@ public class StockUsInfoDo extends IncIdEntity<Integer> {
 
     private BasicFinancials basicFinancials;
 
+    private List<HistoryPrice> historyPrices;
+
+    private List<PERatio> peRatios;
+
 
     public StockUsInfoDo(String currency, String description, String displaySymbol, String figi, String mic, String symbol, String type) {
         this.currency = currency;
@@ -682,6 +688,22 @@ public class StockUsInfoDo extends IncIdEntity<Integer> {
         return sb.toString();
     }
 
+    public List<HistoryPrice> getHistoryPrices() {
+        return historyPrices;
+    }
+
+
+    public List<PERatio> getPeRatios() {
+        return peRatios;
+    }
+
+    public void setPeRatios(List<PERatio> peRatios) {
+        this.peRatios = peRatios;
+    }
+
+    public void setHistoryPrices(List<HistoryPrice> historyPrices) {
+        this.historyPrices = historyPrices;
+    }
 
     public BasicFinancials getBasicFinancials() {
         return basicFinancials;

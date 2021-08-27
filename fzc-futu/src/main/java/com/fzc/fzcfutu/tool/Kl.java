@@ -20,9 +20,11 @@ public class Kl implements FTSPI_Qot, FTSPI_Conn {
 
 
     public Kl() {
+
         qot.setClientInfo("javaclient", 1);  //设置客户端信息
         qot.setConnSpi(this);  //设置连接回调
         qot.setQotSpi(this);   //设置交易回调
+
     }
     public Kl(String code, String market) {
         this.code = code;
