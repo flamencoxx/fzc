@@ -3,6 +3,7 @@ package com.fzc.fzcstockus.controller;
 import cn.hutool.json.JSONObject;
 import com.fzc.fzcstockus.mutiThread.FetchBasicFinancial;
 import com.fzc.fzcstockus.mutiThread.FetchCompanyInfo;
+import com.fzc.fzcstockus.producer.BasicFinancialProducer;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
 import com.fzc.fzcstockus.servcie.StockCompanyInfoService;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author Flamenco.xxx
@@ -48,6 +51,9 @@ public class StockUsHistoryTableController {
     @Autowired
     private StockUsHistoryTableService stockUsHistoryTableService;
 
+    @Autowired
+    private BasicFinancialProducer basicFinancialProducer;
+
 
 
     @GetMapping(value="data")
@@ -55,6 +61,13 @@ public class StockUsHistoryTableController {
         JSONObject jsonObject = null;
         if(stockUsInfoDoRepository.existsBySymbol(code.toUpperCase())){
             jsonObject = stockUsHistoryTableService.findUsTable(code.toLowerCase());
+            /*放入RabbitMQ队列进行异步更新操作*/
+            int id = (int) (System.currentTimeMillis() / 1000);
+            String symbol = code.toUpperCase();
+            basicFinancialProducer.asyncSend(id,symbol);
+            log.info("[basicFinancialSyncSend][发送编号：[{}] 发送成功,发送股票代号[{}]", id,symbol);
+
+            // 阻塞等待，保证消费
         }else{
             log.info("查询HistoryTable不存在的股票");
             return ResponseEntity.ok(null);

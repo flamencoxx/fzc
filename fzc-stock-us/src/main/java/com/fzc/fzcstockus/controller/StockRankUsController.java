@@ -6,6 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.fzc.fzcstockus.DO.StockUsInfoDo;
 import com.fzc.fzcstockus.model.BasicFinancials;
 import com.fzc.fzcstockus.model.Metric;
+import com.fzc.fzcstockus.producer.BasicFinancialProducer;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockUsInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author Flamenco.xxx
@@ -37,6 +39,9 @@ public class StockRankUsController {
 
     @Autowired
     private StockUsInfoDoRepository stockUsInfoDoRepository;
+
+    @Autowired
+    private BasicFinancialProducer basicFinancialProducer;
 
 
 //    从数据库抓10个数据:通过pageable分页返回，bug返回的总页数需要乘10才能正常显示不然显示页数只有十分之一，很奇怪。
@@ -79,6 +84,9 @@ public class StockRankUsController {
                 pageResult  = stockUsInfoDoRepository.findByMicAndSymbolLike(node,code.toUpperCase(),pageable);
             }
         }
+
+
+
 
 //        PageRequest pageable = PageRequest.of(pageIndex, pageSize, Sort.by(sort).ascending());
 //

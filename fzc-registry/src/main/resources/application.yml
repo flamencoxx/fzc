@@ -1,5 +1,7 @@
 server:
   port: 10086
+
+
 spring:
   application:
     name: fzc-registry
@@ -12,3 +14,5 @@ eureka:
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 5000
+arthas:
+  agent-id: fzc-registry

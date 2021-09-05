@@ -11,6 +11,7 @@ import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
 import com.fzc.fzcstockus.servcie.StockCompanyInfoService;
 import com.fzc.fzcstockus.servcie.StockUsInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,7 @@ import java.util.concurrent.TimeUnit;
  */
 @CrossOrigin()
 @Controller
+@Slf4j
 @RequestMapping(value ="/OtherDetails")
 public class StockUsOtherDetailsController {
     @Autowired
@@ -89,14 +91,15 @@ public class StockUsOtherDetailsController {
                         TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(3));
 
 
-        fetchBasicFinancial.setCode(code.toUpperCase());
+//        fetchBasicFinancial.setCode(code.toUpperCase());
         fetchCompanyInfo.setCode(code.toUpperCase());
-        threadPool.execute(fetchBasicFinancial);
+//        threadPool.execute(fetchBasicFinancial);
 
         threadPool.execute(fetchCompanyInfo);
 
         threadPool.shutdown();
 
+        log.info("调用美股table其他数据");
 
         return ResponseEntity.ok(jsonObject);
     }

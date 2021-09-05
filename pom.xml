@@ -57,6 +57,12 @@
             <version>8.0.18</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.taobao.arthas</groupId>
+            <artifactId>arthas-spring-boot-starter</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
         <!-- springCloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

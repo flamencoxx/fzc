@@ -4,8 +4,10 @@ import com.fzc.fzcstockus.model.BasicFinancials;
 import com.fzc.fzcstockus.model.HistoryPrice;
 import com.fzc.fzcstockus.model.PERatio;
 import com.fzc.fzcstockus.mongo.IncIdEntity;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +15,7 @@ import java.util.List;
  * @author 11615
  */
 @Document(collection = "StockUs_important")
-public class StockUsInfoDo extends IncIdEntity<Integer> {
+public class StockUsInfoDo extends IncIdEntity<Integer> implements Serializable {
 
 
     public static class CompanyOverview extends IncIdEntity<Integer>{
@@ -630,6 +632,7 @@ public class StockUsInfoDo extends IncIdEntity<Integer> {
     private String mic;
 
 
+    @TextIndexed(weight = 10)
     private String symbol;
 
 //    Security type

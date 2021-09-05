@@ -2,7 +2,31 @@ server:
   port: 8084
 
 
+
+
 spring:
+  # 对应 RedisProperties 类
+  redis:
+    lettuce:
+      pool:
+        max-active: 8 # 连接池最大连接数
+        max-idle: 8 # 连接池最大空闲连接数
+        min-idle: 0 # 连接池最小空闲连接数
+        max-wait: -1ms # 连接池最大阻塞等待时间，负值表示没有限制
+    host: 127.0.0.1
+    port: 6379
+    #    password: # Redis 服务器密码，默认为空。生产中，一定要设置 Redis 密码！
+    database: 0 # Redis 数据库号，默认为 0 。
+    timeout: 30000ms # Redis 连接超时时间，单位：毫秒。
+    # 对应 RedissonProperties 类
+  #    redisson:
+  #      config: classpath:redisson.yml # 具体的每个配置项，见 org.redisson.config.Config 类。
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   data:
     mongodb:
       host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
@@ -44,3 +68,5 @@ mybatis-plus:
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
+arthas:
+  agent-id: fzc-usStock

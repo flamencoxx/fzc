@@ -968,6 +968,8 @@ public class StockUsInfoServiceImpl extends ServiceImpl<StockUsInfoMapper, Stock
 //        int page = 0;  // 查詢頁數，從0開始為第一頁
 //        int size = 500; // 每頁筆數，設為每頁10筆
 
+//        Sort sort1 = new Sort(Sort.Direction.ASC,"")
+
         PageRequest pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
 
         Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findByMicAndSymbolLike(mic,code,pageable);
