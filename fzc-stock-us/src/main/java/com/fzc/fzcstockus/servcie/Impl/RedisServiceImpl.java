@@ -1,6 +1,7 @@
 package com.fzc.fzcstockus.servcie.Impl;
 
 import com.fzc.fzcstockus.servcie.RedisService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
+@Slf4j
 /**
  * redis操作实现类
  * Created by macro on 2020/3/3.
@@ -25,6 +26,7 @@ public class RedisServiceImpl implements RedisService {
     @Override
     public void set(String key, Object value) {
         redisTemplate.opsForValue().set(key, value);
+//        log.info("fzc");
     }
 
     @Override

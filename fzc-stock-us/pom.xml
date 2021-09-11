@@ -24,10 +24,11 @@
 <!--            <version>3.5.3</version>-->
 <!--        </dependency>-->
 
+        <!-- XXL-JOB 相关依赖 -->
         <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
-            <version>2.1.1</version>
+            <version>2.3.0</version>
         </dependency>
 
         <!-- Spring Data Redis 默认使用 Jackson 作为 JSON 序列化的工具 -->
