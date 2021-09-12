@@ -1,0 +1,6 @@
+2021-08-28 00:00:50,747 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-08-28 00:05:50,775 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-08-28 00:10:50,783 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-08-28 00:15:50,795 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-08-28 00:20:50,807 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-08-28 00:25:50,813 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration

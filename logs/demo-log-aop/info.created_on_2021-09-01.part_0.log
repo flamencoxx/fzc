@@ -1,0 +1,2 @@
+2021-09-01 00:04:36,106 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-01 00:09:36,155 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration

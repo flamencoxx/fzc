@@ -5,10 +5,12 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.fzc.fzcstockus.DO.StockUsInfoDo;
 import com.fzc.fzcstockus.model.PeList;
+import com.fzc.fzcstockus.mutiThread.CallableFindStock;
 import com.fzc.fzcstockus.producer.BasicFinancialProducer;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
 import com.fzc.fzcstockus.servcie.StockPeerService;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * @author Flamenco.xxx
@@ -57,9 +60,17 @@ public class StockAnalysisDataController {
     @GetMapping("data")
     public ResponseEntity<JSONObject> getAnalysisData(@RequestParam(value ="code")String code){
 
-        if ("undfined".equals(code)){
+        long startTime = System.currentTimeMillis();
+
+        if ("undefined".equals(code)){
             code = "aapl";
         }
+
+        //        创建线程池
+//        ThreadPoolExecutor threadPool =
+//                new ThreadPoolExecutor(6,10,60,
+//                        TimeUnit.SECONDS,new ArrayBlockingQueue<Runnable>(3));
+
 
         code = code.toUpperCase();
 
@@ -117,9 +128,26 @@ public class StockAnalysisDataController {
             return ResponseEntity.ok(analysisJson);
         }
 
+//        ExecutorService executorService = Executors.newCachedThreadPool();
+//        CallableFindStock callableFindStock = new CallableFindStock();
+//        callableFindStock.setSymbol(code);
+//        Future<StockUsInfoDo> submit = executorService.submit(callableFindStock);
+//
+//        try {
+//            StockUsInfoDo stock = submit.get();
+//        } catch (InterruptedException | ExecutionException e) {
+//            e.printStackTrace();
+//        }
         StockUsInfoDo stock = stockUsInfoDoRepository.findStockUsInfoDoBySymbol(code);
+        List<StockUsInfoDo> peerList = stockPeerService.findPeerListBySymbolAsync(code);
 
-        System.out.println("收到前端传入的code:" + code);
+
+//        try {
+//            log.info("callable任务:"+submit.get().getSymbol());
+//        } catch (InterruptedException | ExecutionException e) {
+//            e.printStackTrace();
+//        }
+        log.info("收到前端传入的code:" + code);
 
         JSONObject analysisJson = JSONUtil.createObj();
 
@@ -148,7 +176,7 @@ public class StockAnalysisDataController {
 
         int peerLimit = 1;
 
-        List<StockUsInfoDo> peerList = stockPeerService.findPeerListBySymbol(code);
+//        List<StockUsInfoDo> peerList = stockPeerService.findPeerListBySymbol(code);
         for(StockUsInfoDo s:peerList){
 
             JSONObject peerJson = JSONUtil.createObj();
@@ -208,6 +236,11 @@ public class StockAnalysisDataController {
 
 //        salesData
         JSONArray salesDataJsonArray = JSONUtil.createArray();
+//        List<PeList> peList = stock.getPeList();
+//
+//        for()
+
+
 
         analysisJson.put("salesData",salesDataJsonArray);
 
@@ -262,6 +295,8 @@ public class StockAnalysisDataController {
         analysisJson.put("radarData",radarDataJsonArray);
 
 
+        long endTime =System.currentTimeMillis();
+        log.info(String.valueOf(endTime -startTime));
 
         return ResponseEntity.ok(analysisJson);
     }

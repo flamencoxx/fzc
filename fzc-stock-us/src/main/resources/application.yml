@@ -3,7 +3,6 @@ server:
 
 
 
-
 # xxl-job
 xxl:
   job:
@@ -44,6 +43,7 @@ spring:
     password: guest
   data:
     mongodb:
+      auto-index-creation: true
       host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
       port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
       database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
@@ -56,15 +56,25 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
+#    type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+#      # Druid 自定义配置，对应 DruidDataSource 中的 setting 方法的属性
+#      druid:
+#        min-idle: 0 # 池中维护的最小空闲连接数，默认为 0 个。
+#        max-active: 20 # 池中最大连接数，包括闲置和使用中的连接，默认为 8 个。
+#        filter:
+#          stat: # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+#            log-slow-sql: true # 开启慢查询记录
+#            slow-sql-millis: 5000 # 慢 SQL 的标准，单位：毫秒
     hikari:
       max-lifetime: 288300
       maximum-pool-size: 9
 
-  devtools:
-    restart:
-      enabled: true
-      additional-paths: src/java/main
-      additional-exclude: static/**,public/**,WEB-INF/**
+
+#  devtools:
+#    restart:
+#      enabled: true
+#      additional-paths: src/java/main
+#      additional-exclude: static/**,public/**,WEB-INF/**
 
 eureka:
   client:

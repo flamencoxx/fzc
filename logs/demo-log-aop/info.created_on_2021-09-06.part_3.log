@@ -1,0 +1,129 @@
+2021-09-06 16:52:38,926 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-06 16:52:39,734 [main] INFO  [org.redisson.Version] Version.java:41 - Redisson 3.11.3
+2021-09-06 16:52:41,092 [redisson-netty-2-4] INFO  [o.r.connection.pool.MasterPubSubConnectionPool] ConnectionPool.java:168 - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-06 16:52:41,093 [redisson-netty-2-18] INFO  [org.redisson.connection.pool.MasterConnectionPool] ConnectionPool.java:168 - 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-06 16:52:41,452 [main] INFO  [com.fzc.fzcstockus.config.XxlJobConfiguration] XxlJobConfiguration.java:38 - >>>>>>>>>>> xxl-job config init.
+2021-09-06 16:52:41,695 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-06 16:52:43,524 [main] INFO  [o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration] DiscoveryClientOptionalArgsConfiguration.java:68 - Eureka HTTP Client uses RestTemplate.
+2021-09-06 16:52:43,602 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] LoadBalancerCacheAutoConfiguration.java:82 - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-09-06 16:52:43,609 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-06 16:52:43,653 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-us-basic, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@25875eea[class com.fzc.fzcstockus.xxlJob.BasicFinancialTaskJob#execute]
+2021-09-06 16:52:43,653 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-test, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@5fa1409a[class com.fzc.fzcstockus.xxlJob.DemoJob#execute]
+2021-09-06 16:52:43,750 [main] WARN  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:152 - >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2021-09-06 16:52:43,803 [Thread-77] INFO  [com.xxl.job.core.server.EmbedServer] EmbedServer.java:86 - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 6665
+2021-09-06 16:52:43,881 [main] INFO  [o.s.cloud.netflix.eureka.InstanceInfoFactory] InstanceInfoFactory.java:67 - Setting initial instance status as: STARTING
+2021-09-06 16:52:43,939 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:372 - Initializing Eureka in region us-east-1
+2021-09-06 16:52:43,947 [main] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 16:52:43,985 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-06 16:52:43,986 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-06 16:52:43,986 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-06 16:52:43,986 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-06 16:52:43,986 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-06 16:52:43,987 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: true
+2021-09-06 16:52:43,987 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-06 16:52:44,385 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-06 16:52:44,388 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1321 - Starting heartbeat executor: renew interval is: 5
+2021-09-06 16:52:44,391 [main] INFO  [com.netflix.discovery.InstanceInfoReplicator] InstanceInfoReplicator.java:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-09-06 16:52:44,397 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:492 - Discovery Client initialized at timestamp 1630918364396 with initial instances count: 0
+2021-09-06 16:52:44,402 [main] INFO  [o.s.c.n.e.serviceregistry.EurekaServiceRegistry] EurekaServiceRegistry.java:41 - Registering application FZC-STOCK-US with eureka with status UP
+2021-09-06 16:52:44,403 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1352 - Saw local status change event StatusChangeEvent [timestamp=1630918364403, current=UP, previous=STARTING]
+2021-09-06 16:52:44,407 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:873 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084: registering service...
+2021-09-06 16:52:44,427 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8084 (http) with context path ''
+2021-09-06 16:52:44,428 [main] INFO  [o.s.c.n.e.s.EurekaAutoServiceRegistration] EurekaAutoServiceRegistration.java:144 - Updating port to 8084
+2021-09-06 16:52:44,572 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:882 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084 - registration status: 204
+2021-09-06 16:52:44,923 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:636 - Attempting to connect to: [127.0.0.1:5672]
+2021-09-06 16:52:44,977 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:589 - Created new connection: rabbitConnectionFactory#c247d8b:0/SimpleConnection@6a639ada [delegate=amqp://guest@127.0.0.1:5672/, localPort= 13596]
+2021-09-06 16:52:45,077 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:61 - Started FzcStockUsApplication in 14.324 seconds (JVM running for 20.451)
+2021-09-06 16:52:46,352 [RMI TCP Connection(2)-172.30.240.1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-06 16:52:46,352 [RMI TCP Connection(2)-172.30.240.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2021-09-06 16:52:46,354 [RMI TCP Connection(3)-172.30.240.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2021-09-06 16:52:46,355 [RMI TCP Connection(2)-172.30.240.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 2 ms
+2021-09-06 16:52:46,945 [RMI TCP Connection(3)-172.30.240.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2021-09-06 16:52:47,042 [RMI TCP Connection(3)-172.30.240.1] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:3, serverValue:5}] to localhost:27017
+2021-09-06 16:53:14,396 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-06 16:53:14,396 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-06 16:53:14,396 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-06 16:53:14,397 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-06 16:53:14,397 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-06 16:53:14,397 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: false
+2021-09-06 16:53:14,397 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-06 16:53:14,411 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-06 16:57:44,005 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:02:44,047 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:07:44,110 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:12:44,180 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:17:44,247 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:19:38,981 [http-nio-8084-exec-8] WARN  [java.util.prefs] LoggingProxyImpl.java:61 - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2021-09-06 17:19:47,267 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-06 17:19:47,276 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 8 ms. Found 0 MongoDB repository interfaces.
+2021-09-06 17:19:47,277 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-06 17:19:47,286 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-09-06 17:19:47,288 [File Watcher] WARN  [org.mybatis.spring.mapper.ClassPathMapperScanner] Logger.java:44 - No MyBatis mapper was found in '[com.fzc.fzcstockus.mapper]' package. Please check your configuration.
+2021-09-06 17:22:44,294 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:27:44,344 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:32:44,399 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:37:44,439 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:42:44,482 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:47:44,521 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:52:44,564 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 17:57:44,598 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:02:44,641 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:07:44,673 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:12:44,704 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:17:44,718 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:22:44,733 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:27:44,760 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:32:44,786 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:37:44,806 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:42:44,822 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:47:44,829 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:52:44,848 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 18:57:44,861 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:02:44,870 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:07:44,877 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:12:44,888 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:17:44,902 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:22:44,914 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:27:44,919 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:32:44,924 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:37:44,939 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:42:44,944 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:47:44,952 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:52:44,961 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 19:57:44,971 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:02:44,976 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:07:44,982 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:12:44,991 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:17:45,007 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:22:45,017 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:27:45,024 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:32:45,030 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:37:45,034 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:42:45,044 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:47:45,058 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:52:45,063 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 20:57:45,076 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:02:45,091 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:07:45,094 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:12:45,102 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:17:45,115 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:22:45,126 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:27:45,136 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:32:45,140 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:37:45,145 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:42:45,162 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:47:45,177 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:52:45,183 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 21:57:45,186 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:02:45,199 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:07:45,200 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:12:45,202 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:17:45,217 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:22:45,230 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:27:45,240 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:32:45,246 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:37:45,260 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:42:45,272 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:47:45,279 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:52:45,292 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-06 22:57:45,297 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration

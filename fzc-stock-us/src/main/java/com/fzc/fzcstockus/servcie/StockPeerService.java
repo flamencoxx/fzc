@@ -18,5 +18,6 @@ public interface StockPeerService extends IService<StockUsInfo> {
 
     List<StockUsInfoDo> findPeerListBySymbol(String symbol);
 
+    List<StockUsInfoDo> findPeerListBySymbolAsync(String symbol);
 
 }

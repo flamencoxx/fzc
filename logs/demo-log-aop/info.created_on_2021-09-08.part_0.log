@@ -1,0 +1,568 @@
+2021-09-08 08:33:14,956 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:55 - Starting FzcStockUsApplication using Java 1.8.0_191 on FLAMENCO-XXX with PID 4284 (B:\github\flamenco\project\fzc\fzc-stock-us\target\classes started by Flamenco.xxx in B:\github\flamenco\project\fzc)
+2021-09-08 08:33:14,959 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+2021-09-08 08:33:15,376 [main] INFO  [o.s.boot.devtools.restart.ChangeableUrls] DeferredLog.java:255 - The Class-Path manifest attribute in C:\Users\Flamenco.xxx\.m2\repository\com\futunn\openapi\futu-api\5.4.1608\futu-api-5.4.1608.jar referenced one or more files that do not exist: file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/protobuf-java-3.5.1.jar,file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/jna.jar,file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/jna-platform.jar
+2021-09-08 08:33:15,377 [main] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-08 08:33:15,377 [main] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-08 08:33:16,810 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:250 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-08 08:33:16,811 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-08 08:33:17,010 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 189 ms. Found 3 MongoDB repository interfaces.
+2021-09-08 08:33:17,024 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:250 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-08 08:33:17,026 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-08 08:33:17,055 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsDORepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 08:33:17,056 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsInfoDoRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 08:33:17,057 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsInfoRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 08:33:17,057 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2021-09-08 08:33:17,457 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:283 - BeanFactory id=9bd69a90-9045-355f-8111-fa4ee0575f08
+2021-09-08 08:33:17,651 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:376 - Bean 'redisConfig' of type [com.fzc.fzcstockus.config.RedisConfig$$EnhancerBySpringCGLIB$$1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-08 08:33:18,441 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8084 (http)
+2021-09-08 08:33:18,464 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2021-09-08 08:33:18,465 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-09-08 08:33:18,603 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2021-09-08 08:33:18,604 [main] INFO  [o.s.b.w.s.c.ServletWebServerApplicationContext] ServletWebServerApplicationContext.java:289 - Root WebApplicationContext: initialization completed in 3225 ms
+2021-09-08 08:33:20,371 [main] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-08 08:33:20,457 [cluster-rtt-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2021-09-08 08:33:20,457 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
+2021-09-08 08:33:20,457 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=30284100}
+2021-09-08 08:33:20,636 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-08 08:33:20,754 [main] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2021-09-08 08:33:20,867 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-08 08:33:21,604 [main] INFO  [org.redisson.Version] Version.java:41 - Redisson 3.11.3
+2021-09-08 08:33:22,755 [redisson-netty-2-19] INFO  [org.redisson.connection.pool.MasterConnectionPool] ConnectionPool.java:168 - 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-08 08:33:22,755 [redisson-netty-2-27] INFO  [o.r.connection.pool.MasterPubSubConnectionPool] ConnectionPool.java:168 - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-08 08:33:23,049 [main] INFO  [com.fzc.fzcstockus.config.XxlJobConfiguration] XxlJobConfiguration.java:38 - >>>>>>>>>>> xxl-job config init.
+2021-09-08 08:33:23,263 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 08:33:24,873 [main] INFO  [o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration] DiscoveryClientOptionalArgsConfiguration.java:68 - Eureka HTTP Client uses RestTemplate.
+2021-09-08 08:33:24,945 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] LoadBalancerCacheAutoConfiguration.java:82 - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-09-08 08:33:24,951 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-08 08:33:24,994 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-us-basic, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6e62c398[class com.fzc.fzcstockus.xxlJob.BasicFinancialTaskJob#execute]
+2021-09-08 08:33:24,994 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-test, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6b3dc0aa[class com.fzc.fzcstockus.xxlJob.DemoJob#execute]
+2021-09-08 08:33:25,093 [main] WARN  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:152 - >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2021-09-08 08:33:25,209 [Thread-74] INFO  [com.xxl.job.core.server.EmbedServer] EmbedServer.java:86 - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 6665
+2021-09-08 08:33:25,242 [main] INFO  [o.s.cloud.netflix.eureka.InstanceInfoFactory] InstanceInfoFactory.java:67 - Setting initial instance status as: STARTING
+2021-09-08 08:33:25,301 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:372 - Initializing Eureka in region us-east-1
+2021-09-08 08:33:25,309 [main] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 08:33:25,347 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-08 08:33:25,347 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-08 08:33:25,347 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-08 08:33:25,348 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-08 08:33:25,348 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-08 08:33:25,348 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: true
+2021-09-08 08:33:25,348 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-08 08:33:25,851 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-08 08:33:25,855 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1321 - Starting heartbeat executor: renew interval is: 5
+2021-09-08 08:33:25,859 [main] INFO  [com.netflix.discovery.InstanceInfoReplicator] InstanceInfoReplicator.java:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-09-08 08:33:25,866 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:492 - Discovery Client initialized at timestamp 1631061205864 with initial instances count: 0
+2021-09-08 08:33:25,871 [main] INFO  [o.s.c.n.e.serviceregistry.EurekaServiceRegistry] EurekaServiceRegistry.java:41 - Registering application FZC-STOCK-US with eureka with status UP
+2021-09-08 08:33:25,871 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1352 - Saw local status change event StatusChangeEvent [timestamp=1631061205871, current=UP, previous=STARTING]
+2021-09-08 08:33:25,874 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:873 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084: registering service...
+2021-09-08 08:33:25,890 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8084 (http) with context path ''
+2021-09-08 08:33:25,892 [main] INFO  [o.s.c.n.e.s.EurekaAutoServiceRegistration] EurekaAutoServiceRegistration.java:144 - Updating port to 8084
+2021-09-08 08:33:26,049 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:882 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084 - registration status: 204
+2021-09-08 08:33:26,268 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:636 - Attempting to connect to: [127.0.0.1:5672]
+2021-09-08 08:33:26,322 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:589 - Created new connection: rabbitConnectionFactory#58037bd2:0/SimpleConnection@5024b6e2 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 2467]
+2021-09-08 08:33:26,423 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:61 - Started FzcStockUsApplication in 12.961 seconds (JVM running for 18.746)
+2021-09-08 08:33:27,096 [RMI TCP Connection(2)-172.29.128.1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 08:33:27,097 [RMI TCP Connection(2)-172.29.128.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2021-09-08 08:33:27,098 [RMI TCP Connection(2)-172.29.128.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 1 ms
+2021-09-08 08:33:27,099 [RMI TCP Connection(1)-172.29.128.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2021-09-08 08:33:27,615 [RMI TCP Connection(1)-172.29.128.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2021-09-08 08:33:27,698 [RMI TCP Connection(1)-172.29.128.1] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:27017
+2021-09-08 08:33:55,859 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-08 08:33:55,860 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-08 08:33:55,860 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-08 08:33:55,860 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-08 08:33:55,860 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-08 08:33:55,860 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: false
+2021-09-08 08:33:55,860 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-08 08:33:55,883 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-08 08:38:25,350 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 08:42:22,246 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-08 08:42:22,259 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2021-09-08 08:42:22,269 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-08 08:42:22,278 [File Watcher] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 7 ms. Found 0 MongoDB repository interfaces.
+2021-09-08 08:42:22,279 [File Watcher] WARN  [org.mybatis.spring.mapper.ClassPathMapperScanner] Logger.java:44 - No MyBatis mapper was found in '[com.fzc.fzcstockus.mapper]' package. Please check your configuration.
+2021-09-08 08:43:25,366 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 08:48:25,371 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 08:53:25,375 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 08:58:25,376 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:03:25,379 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:08:25,391 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:13:25,400 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:18:25,401 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:23:25,404 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:28:25,414 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:33:25,416 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:38:25,421 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:43:25,424 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:48:25,432 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:53:25,433 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 09:58:25,443 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:03:25,444 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:08:25,446 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:13:25,458 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:18:25,464 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:23:25,477 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:28:25,478 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:33:25,485 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:38:25,488 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:43:25,493 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:48:25,505 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:53:25,507 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 10:58:25,511 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:03:25,518 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:08:25,521 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:13:25,532 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:18:25,543 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:23:25,557 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:28:25,569 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:33:25,574 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:38:25,588 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:43:25,592 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:48:25,595 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:53:25,607 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 11:58:25,612 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:03:25,616 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:08:25,622 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:13:25,628 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:18:25,638 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:23:25,651 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:28:25,666 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:33:25,680 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:38:25,695 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:43:25,706 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:48:25,718 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:53:25,726 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 12:58:25,732 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:03:25,735 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:08:25,745 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:13:25,760 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:18:25,774 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:23:25,777 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:28:25,789 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:33:25,790 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:38:25,796 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:43:25,797 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:48:25,799 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:53:25,814 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 13:58:25,818 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:03:25,825 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:08:25,831 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:13:25,833 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:18:25,835 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:20:09,067 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoNodeIsRecoveringException: Command failed with error 11600 (InterruptedAtShutdown): 'interrupted at shutdown' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "interrupted at shutdown", "code": 11600, "codeName": "InterruptedAtShutdown"}
+	at com.mongodb.internal.connection.ProtocolHelper.createSpecialException(ProtocolHelper.java:242)
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:171)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:359)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-08 14:20:21,129 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2021-09-08 14:23:21,948 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:280)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:107)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:144)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-08 14:23:25,837 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:23:26,063 [cluster-rtt-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:35, serverValue:1}] to localhost:27017
+2021-09-08 14:23:31,959 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:36, serverValue:2}] to localhost:27017
+2021-09-08 14:23:31,960 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1436700}
+2021-09-08 14:25:43,900 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoNodeIsRecoveringException: Command failed with error 11600 (InterruptedAtShutdown): 'interrupted at shutdown' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "interrupted at shutdown", "code": 11600, "codeName": "InterruptedAtShutdown"}
+	at com.mongodb.internal.connection.ProtocolHelper.createSpecialException(ProtocolHelper.java:242)
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:171)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:359)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-08 14:25:55,947 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2021-09-08 14:26:43,135 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:45, serverValue:2}] to localhost:27017
+2021-09-08 14:26:43,135 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=854500}
+2021-09-08 14:26:44,352 [cluster-rtt-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:46, serverValue:4}] to localhost:27017
+2021-09-08 14:28:25,848 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:33:25,854 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:38:25,859 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:43:25,860 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:48:25,869 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:53:25,871 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 14:58:25,880 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 15:01:48,628 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoNodeIsRecoveringException: Command failed with error 11600 (InterruptedAtShutdown): 'interrupted at shutdown' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "interrupted at shutdown", "code": 11600, "codeName": "InterruptedAtShutdown"}
+	at com.mongodb.internal.connection.ProtocolHelper.createSpecialException(ProtocolHelper.java:242)
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:171)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:359)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-08 15:02:00,685 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2021-09-08 15:02:58,890 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:280)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:107)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:144)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-08 15:03:10,953 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2021-09-08 15:03:25,885 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 15:05:21,510 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:280)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:107)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:144)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+2021-09-08 15:05:33,559 [cluster-ClusterId{value='613804d0e595a3238752e303', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:76 - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2021-09-08 17:06:39,908 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:55 - Starting FzcStockUsApplication using Java 1.8.0_191 on FLAMENCO-XXX with PID 40952 (B:\github\flamenco\project\fzc\fzc-stock-us\target\classes started by Flamenco.xxx in B:\github\flamenco\project\fzc)
+2021-09-08 17:06:39,910 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+2021-09-08 17:06:40,372 [main] INFO  [o.s.boot.devtools.restart.ChangeableUrls] DeferredLog.java:255 - The Class-Path manifest attribute in C:\Users\Flamenco.xxx\.m2\repository\com\futunn\openapi\futu-api\5.4.1608\futu-api-5.4.1608.jar referenced one or more files that do not exist: file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/protobuf-java-3.5.1.jar,file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/jna.jar,file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/jna-platform.jar
+2021-09-08 17:06:40,378 [main] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-08 17:06:40,379 [main] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-08 17:06:41,978 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:250 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-08 17:06:41,979 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-08 17:06:42,206 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 216 ms. Found 3 MongoDB repository interfaces.
+2021-09-08 17:06:42,222 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:250 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-08 17:06:42,224 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-08 17:06:42,255 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsDORepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 17:06:42,255 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsInfoDoRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 17:06:42,256 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsInfoRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 17:06:42,257 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-09-08 17:06:42,672 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:283 - BeanFactory id=9bd69a90-9045-355f-8111-fa4ee0575f08
+2021-09-08 17:06:42,883 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:376 - Bean 'redisConfig' of type [com.fzc.fzcstockus.config.RedisConfig$$EnhancerBySpringCGLIB$$1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-08 17:06:43,730 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8084 (http)
+2021-09-08 17:06:43,756 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2021-09-08 17:06:43,756 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-09-08 17:06:43,907 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2021-09-08 17:06:43,907 [main] INFO  [o.s.b.w.s.c.ServletWebServerApplicationContext] ServletWebServerApplicationContext.java:289 - Root WebApplicationContext: initialization completed in 3527 ms
+2021-09-08 17:06:45,722 [main] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-08 17:06:45,808 [cluster-ClusterId{value='61387d25bd4f596c71285c6a', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2021-09-08 17:06:45,808 [cluster-rtt-ClusterId{value='61387d25bd4f596c71285c6a', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:2, serverValue:3}] to localhost:27017
+2021-09-08 17:06:45,809 [cluster-ClusterId{value='61387d25bd4f596c71285c6a', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=30436600}
+2021-09-08 17:06:45,968 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-08 17:06:46,091 [main] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2021-09-08 17:06:46,204 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-08 17:06:47,000 [main] INFO  [org.redisson.Version] Version.java:41 - Redisson 3.11.3
+2021-09-08 17:06:48,195 [redisson-netty-2-4] INFO  [o.r.connection.pool.MasterPubSubConnectionPool] ConnectionPool.java:168 - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-08 17:06:48,196 [redisson-netty-2-19] INFO  [org.redisson.connection.pool.MasterConnectionPool] ConnectionPool.java:168 - 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-08 17:06:48,527 [main] INFO  [com.fzc.fzcstockus.config.XxlJobConfiguration] XxlJobConfiguration.java:38 - >>>>>>>>>>> xxl-job config init.
+2021-09-08 17:06:48,746 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 17:06:50,343 [main] INFO  [o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration] DiscoveryClientOptionalArgsConfiguration.java:68 - Eureka HTTP Client uses RestTemplate.
+2021-09-08 17:06:50,425 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] LoadBalancerCacheAutoConfiguration.java:82 - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-09-08 17:06:50,431 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-08 17:06:50,474 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-us-basic, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6c80ccf3[class com.fzc.fzcstockus.xxlJob.BasicFinancialTaskJob#execute]
+2021-09-08 17:06:50,474 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-test, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@3185310f[class com.fzc.fzcstockus.xxlJob.DemoJob#execute]
+2021-09-08 17:06:50,580 [main] WARN  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:152 - >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2021-09-08 17:06:50,743 [main] INFO  [o.s.cloud.netflix.eureka.InstanceInfoFactory] InstanceInfoFactory.java:67 - Setting initial instance status as: STARTING
+2021-09-08 17:06:50,798 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:372 - Initializing Eureka in region us-east-1
+2021-09-08 17:06:50,805 [main] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:06:50,844 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-08 17:06:50,845 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-08 17:06:50,846 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-08 17:06:50,846 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-08 17:06:50,847 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-08 17:06:50,847 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: true
+2021-09-08 17:06:50,847 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-08 17:06:51,274 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-08 17:06:51,276 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1321 - Starting heartbeat executor: renew interval is: 5
+2021-09-08 17:06:51,280 [main] INFO  [com.netflix.discovery.InstanceInfoReplicator] InstanceInfoReplicator.java:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-09-08 17:06:51,286 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:492 - Discovery Client initialized at timestamp 1631092011284 with initial instances count: 0
+2021-09-08 17:06:51,291 [main] INFO  [o.s.c.n.e.serviceregistry.EurekaServiceRegistry] EurekaServiceRegistry.java:41 - Registering application FZC-STOCK-US with eureka with status UP
+2021-09-08 17:06:51,292 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1352 - Saw local status change event StatusChangeEvent [timestamp=1631092011292, current=UP, previous=STARTING]
+2021-09-08 17:06:51,296 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:873 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084: registering service...
+2021-09-08 17:06:51,313 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8084 (http) with context path ''
+2021-09-08 17:06:51,315 [main] INFO  [o.s.c.n.e.s.EurekaAutoServiceRegistration] EurekaAutoServiceRegistration.java:144 - Updating port to 8084
+2021-09-08 17:06:51,388 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:882 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084 - registration status: 204
+2021-09-08 17:06:51,693 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:636 - Attempting to connect to: [127.0.0.1:5672]
+2021-09-08 17:06:51,750 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:589 - Created new connection: rabbitConnectionFactory#4c161fa2:0/SimpleConnection@40f0714c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 13048]
+2021-09-08 17:06:51,858 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:61 - Started FzcStockUsApplication in 13.53 seconds (JVM running for 19.896)
+2021-09-08 17:06:52,570 [RMI TCP Connection(2)-172.29.128.1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 17:06:52,570 [RMI TCP Connection(2)-172.29.128.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2021-09-08 17:06:52,572 [RMI TCP Connection(3)-172.29.128.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2021-09-08 17:06:52,573 [RMI TCP Connection(2)-172.29.128.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 2 ms
+2021-09-08 17:06:53,143 [RMI TCP Connection(3)-172.29.128.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2021-09-08 17:06:53,263 [RMI TCP Connection(3)-172.29.128.1] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:3, serverValue:4}] to localhost:27017
+2021-09-08 17:07:21,289 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-08 17:07:21,289 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-08 17:07:21,289 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-08 17:07:21,290 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-08 17:07:21,290 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-08 17:07:21,290 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: false
+2021-09-08 17:07:21,290 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-08 17:07:21,303 [DiscoveryClient-CacheRefreshExecutor-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-08 17:08:09,950 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:55 - Starting FzcStockUsApplication using Java 1.8.0_191 on FLAMENCO-XXX with PID 31280 (B:\github\flamenco\project\fzc\fzc-stock-us\target\classes started by Flamenco.xxx in B:\github\flamenco\project\fzc)
+2021-09-08 17:08:09,952 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+2021-09-08 17:08:10,372 [main] INFO  [o.s.boot.devtools.restart.ChangeableUrls] DeferredLog.java:255 - The Class-Path manifest attribute in C:\Users\Flamenco.xxx\.m2\repository\com\futunn\openapi\futu-api\5.4.1608\futu-api-5.4.1608.jar referenced one or more files that do not exist: file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/protobuf-java-3.5.1.jar,file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/jna.jar,file:/C:/Users/Flamenco.xxx/.m2/repository/com/futunn/openapi/futu-api/5.4.1608/jna-platform.jar
+2021-09-08 17:08:10,373 [main] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-08 17:08:10,373 [main] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-08 17:08:11,826 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:250 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-08 17:08:11,827 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-08 17:08:12,035 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 198 ms. Found 3 MongoDB repository interfaces.
+2021-09-08 17:08:12,049 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:250 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-09-08 17:08:12,051 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:128 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-09-08 17:08:12,079 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsDORepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 17:08:12,080 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsInfoDoRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 17:08:12,081 [main] INFO  [o.s.d.r.c.RepositoryConfigurationExtensionSupport] RepositoryConfigurationExtensionSupport.java:349 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.fzc.fzcstockus.repository.StockUsInfoRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-08 17:08:12,081 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:188 - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2021-09-08 17:08:12,491 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:283 - BeanFactory id=9bd69a90-9045-355f-8111-fa4ee0575f08
+2021-09-08 17:08:12,693 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:376 - Bean 'redisConfig' of type [com.fzc.fzcstockus.config.RedisConfig$$EnhancerBySpringCGLIB$$1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-08 17:08:13,507 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8084 (http)
+2021-09-08 17:08:13,531 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2021-09-08 17:08:13,532 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-09-08 17:08:13,676 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2021-09-08 17:08:13,677 [main] INFO  [o.s.b.w.s.c.ServletWebServerApplicationContext] ServletWebServerApplicationContext.java:289 - Root WebApplicationContext: initialization completed in 3303 ms
+2021-09-08 17:08:15,422 [main] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-08 17:08:15,512 [cluster-rtt-ClusterId{value='61387d7f771338013f08d155', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+2021-09-08 17:08:15,512 [cluster-ClusterId{value='61387d7f771338013f08d155', description='null'}-localhost:27017] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:1, serverValue:5}] to localhost:27017
+2021-09-08 17:08:15,512 [cluster-ClusterId{value='61387d7f771338013f08d155', description='null'}-localhost:27017] INFO  [org.mongodb.driver.cluster] SLF4JLogger.java:71 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=31051800}
+2021-09-08 17:08:15,699 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-08 17:08:15,838 [main] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2021-09-08 17:08:15,936 [main] WARN  [org.springframework.data.convert.CustomConversions] CustomConversions.java:260 - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-09-08 17:08:16,693 [main] INFO  [org.redisson.Version] Version.java:41 - Redisson 3.11.3
+2021-09-08 17:08:17,835 [redisson-netty-2-19] INFO  [org.redisson.connection.pool.MasterConnectionPool] ConnectionPool.java:168 - 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-08 17:08:17,833 [redisson-netty-2-2] INFO  [o.r.connection.pool.MasterPubSubConnectionPool] ConnectionPool.java:168 - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2021-09-08 17:08:18,128 [main] INFO  [com.fzc.fzcstockus.config.XxlJobConfiguration] XxlJobConfiguration.java:38 - >>>>>>>>>>> xxl-job config init.
+2021-09-08 17:08:18,347 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 17:08:19,940 [main] INFO  [o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration] DiscoveryClientOptionalArgsConfiguration.java:68 - Eureka HTTP Client uses RestTemplate.
+2021-09-08 17:08:20,013 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] LoadBalancerCacheAutoConfiguration.java:82 - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-09-08 17:08:20,020 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-08 17:08:20,064 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-us-basic, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@55ca5dce[class com.fzc.fzcstockus.xxlJob.BasicFinancialTaskJob#execute]
+2021-09-08 17:08:20,064 [main] INFO  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:178 - >>>>>>>>>>> xxl-job register jobhandler success, name:fzc-test, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6b1e4f4f[class com.fzc.fzcstockus.xxlJob.DemoJob#execute]
+2021-09-08 17:08:20,159 [main] WARN  [com.xxl.job.core.executor.XxlJobExecutor] XxlJobExecutor.java:152 - >>>>>>>>>>> xxl-job accessToken is empty. To ensure system security, please set the accessToken.
+2021-09-08 17:08:20,283 [Thread-73] INFO  [com.xxl.job.core.server.EmbedServer] EmbedServer.java:86 - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 6665
+2021-09-08 17:08:20,319 [main] INFO  [o.s.cloud.netflix.eureka.InstanceInfoFactory] InstanceInfoFactory.java:67 - Setting initial instance status as: STARTING
+2021-09-08 17:08:20,377 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:372 - Initializing Eureka in region us-east-1
+2021-09-08 17:08:20,385 [main] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:08:20,443 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1007 - Disable delta property : false
+2021-09-08 17:08:20,443 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1008 - Single vip registry refresh property : null
+2021-09-08 17:08:20,443 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1009 - Force full registry fetch : false
+2021-09-08 17:08:20,443 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1010 - Application is null : false
+2021-09-08 17:08:20,444 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1011 - Registered Applications size is zero : true
+2021-09-08 17:08:20,444 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1013 - Application version is -1: true
+2021-09-08 17:08:20,444 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1097 - Getting all instance registry info from the eureka server
+2021-09-08 17:08:20,766 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1106 - The response status is 200
+2021-09-08 17:08:20,771 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1321 - Starting heartbeat executor: renew interval is: 5
+2021-09-08 17:08:20,775 [main] INFO  [com.netflix.discovery.InstanceInfoReplicator] InstanceInfoReplicator.java:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-09-08 17:08:20,781 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:492 - Discovery Client initialized at timestamp 1631092100780 with initial instances count: 1
+2021-09-08 17:08:20,785 [main] INFO  [o.s.c.n.e.serviceregistry.EurekaServiceRegistry] EurekaServiceRegistry.java:41 - Registering application FZC-STOCK-US with eureka with status UP
+2021-09-08 17:08:20,786 [main] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:1352 - Saw local status change event StatusChangeEvent [timestamp=1631092100786, current=UP, previous=STARTING]
+2021-09-08 17:08:20,789 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:873 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084: registering service...
+2021-09-08 17:08:20,806 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8084 (http) with context path ''
+2021-09-08 17:08:20,808 [main] INFO  [o.s.c.n.e.s.EurekaAutoServiceRegistration] EurekaAutoServiceRegistration.java:144 - Updating port to 8084
+2021-09-08 17:08:20,870 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient] DiscoveryClient.java:882 - DiscoveryClient_FZC-STOCK-US/host.docker.internal:fzc-stock-us:8084 - registration status: 204
+2021-09-08 17:08:21,157 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:636 - Attempting to connect to: [127.0.0.1:5672]
+2021-09-08 17:08:21,211 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:589 - Created new connection: rabbitConnectionFactory#320eb4ef:0/SimpleConnection@1d54d257 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 9026]
+2021-09-08 17:08:21,318 [main] INFO  [com.fzc.fzcstockus.FzcStockUsApplication] StartupInfoLogger.java:61 - Started FzcStockUsApplication in 12.849 seconds (JVM running for 18.63)
+2021-09-08 17:08:21,796 [RMI TCP Connection(3)-172.29.128.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2021-09-08 17:08:22,261 [RMI TCP Connection(5)-172.29.128.1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 17:08:22,261 [RMI TCP Connection(5)-172.29.128.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2021-09-08 17:08:22,263 [RMI TCP Connection(5)-172.29.128.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 2 ms
+2021-09-08 17:08:22,339 [RMI TCP Connection(3)-172.29.128.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2021-09-08 17:08:22,422 [RMI TCP Connection(3)-172.29.128.1] INFO  [org.mongodb.driver.connection] SLF4JLogger.java:71 - Opened connection [connectionId{localValue:3, serverValue:7}] to localhost:27017
+2021-09-08 17:13:20,450 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:17:54,472 [File Watcher] WARN  [o.s.a.r.listener.SimpleMessageListenerContainer] AbstractMessageListenerContainer.java:1844 - 'missingQueuesFatal' is ignored during the initial start(), for lazily loaded containers
+2021-09-08 17:18:20,463 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:23:20,471 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:28:20,472 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:33:20,486 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:38:20,488 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:43:20,502 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:48:20,500 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:53:20,501 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 17:58:20,491 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:03:20,488 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:08:20,485 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:13:20,486 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:18:20,481 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:23:20,491 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:28:20,499 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:33:20,508 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:38:20,517 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:43:20,527 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:48:20,529 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:53:20,534 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 18:58:20,535 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:03:20,540 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:08:20,538 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:13:20,546 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:18:20,557 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:18:41,714 [File Watcher] WARN  [o.s.a.r.listener.SimpleMessageListenerContainer] AbstractMessageListenerContainer.java:1844 - 'missingQueuesFatal' is ignored during the initial start(), for lazily loaded containers
+2021-09-08 19:23:20,559 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:28:20,562 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:33:20,565 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:38:20,576 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:43:20,581 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:48:20,588 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:53:20,588 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 19:58:20,590 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:03:20,602 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:08:20,603 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:13:20,615 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:18:20,617 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:23:20,630 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:28:20,632 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:33:20,646 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:38:20,659 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:43:20,664 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:48:20,676 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:53:20,685 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 20:58:20,695 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:03:20,703 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:08:20,717 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:13:20,726 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:18:20,730 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:23:20,739 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:28:20,746 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:33:20,759 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:38:20,772 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:43:20,778 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:48:20,785 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:53:20,798 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 21:58:20,805 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:03:20,808 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:08:20,814 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:13:20,815 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:18:20,816 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:23:20,823 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:28:20,828 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:33:20,828 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:38:20,830 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:43:20,839 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:48:20,849 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:53:20,851 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 22:58:20,865 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:03:20,870 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:08:20,876 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:13:20,879 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:18:20,888 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:23:20,900 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:28:20,902 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:33:20,908 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:38:20,918 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:43:20,929 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
+2021-09-08 23:48:20,942 [AsyncResolver-bootstrap-executor-0] INFO  [c.n.d.shared.resolver.aws.ConfigClusterResolver] ConfigClusterResolver.java:43 - Resolving eureka endpoints via configuration
