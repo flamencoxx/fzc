@@ -1,6 +1,7 @@
 package com.fzc.fzcstockus.model;
 
 
+import java.util.Objects;
 
 /**
  * @author 11615
@@ -41,5 +42,18 @@ public class Eps {
         sb.append(", v=").append(v);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Eps eps = (Eps) o;
+        return Objects.equals(getPeriod(), eps.getPeriod()) && Objects.equals(getV(), eps.getV());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPeriod(), getV());
     }
 }

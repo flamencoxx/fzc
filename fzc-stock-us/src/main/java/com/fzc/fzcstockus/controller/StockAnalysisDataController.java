@@ -3,7 +3,9 @@ package com.fzc.fzcstockus.controller;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.fzc.fzcstockus.AnalysisModel.SalesDataEmpty;
 import com.fzc.fzcstockus.DO.StockUsInfoDo;
+import com.fzc.fzcstockus.model.PERatio;
 import com.fzc.fzcstockus.model.PeList;
 import com.fzc.fzcstockus.mutiThread.CallableFindStock;
 import com.fzc.fzcstockus.producer.BasicFinancialProducer;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Formatter;
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -30,7 +33,7 @@ import java.util.concurrent.*;
 @CrossOrigin()
 @Controller
 @Slf4j
-@RequestMapping(value ="/AnalysisData")
+@RequestMapping(value = "/AnalysisData")
 public class StockAnalysisDataController {
 
     @Autowired
@@ -48,22 +51,20 @@ public class StockAnalysisDataController {
 //    @RequestParam(value ="code")String code
 
 
-
-
     @GetMapping("update")
-    public ResponseEntity<String> updateBasic(@RequestParam(value = "code")String code){
+    public ResponseEntity<String> updateBasic(@RequestParam(value = "code") String code) {
         stockBasicFinancialService.updateStockBasicFinancial(code);
         return ResponseEntity.ok("200");
     }
 
 
     @GetMapping("data")
-    public ResponseEntity<JSONObject> getAnalysisData(@RequestParam(value ="code")String code){
+    public ResponseEntity<JSONObject> getAnalysisData(@RequestParam(value = "code") String code) {
 
         long startTime = System.currentTimeMillis();
 
-        if ("undefined".equals(code)){
-            code = "aapl";
+        if ("undefined".equals(code)) {
+            code = "ibm";
         }
 
         //        创建线程池
@@ -83,47 +84,47 @@ public class StockAnalysisDataController {
 
         boolean exit = stockUsInfoDoRepository.existsBySymbol(code);
 
-        if (!exit){
+        if (!exit) {
             JSONObject analysisJson = JSONUtil.createObj();
             JSONObject cardOneJson = JSONUtil.createObj();
-            cardOneJson.put("num",404);
-            analysisJson.put("cardOne",cardOneJson);
+            cardOneJson.put("num", 404);
+            analysisJson.put("cardOne", cardOneJson);
 
             JSONArray visitDataJsonArray = JSONUtil.createArray();
 
-            analysisJson.put("visitData",visitDataJsonArray);
+            analysisJson.put("visitData", visitDataJsonArray);
 
             //        visitData2
             JSONArray visitData2JsonArray = JSONUtil.createArray();
 
-            analysisJson.put("visitData2",visitData2JsonArray);
+            analysisJson.put("visitData2", visitData2JsonArray);
 //        salesData
             JSONArray salesDataJsonArray = JSONUtil.createArray();
-            analysisJson.put("salesData",salesDataJsonArray);
+            analysisJson.put("salesData", salesDataJsonArray);
 //        SearchData
             JSONArray SearchDataJsonArray = JSONUtil.createArray();
-            analysisJson.put("SearchData",SearchDataJsonArray);
+            analysisJson.put("SearchData", SearchDataJsonArray);
 //        offlineData
             JSONArray offlineDataJsonArray = JSONUtil.createArray();
-            analysisJson.put("offlineData",offlineDataJsonArray);
+            analysisJson.put("offlineData", offlineDataJsonArray);
 //        offlineChartData
             JSONArray offlineChartDataJsonArray = JSONUtil.createArray();
-            analysisJson.put("offlineChartData",offlineChartDataJsonArray);
+            analysisJson.put("offlineChartData", offlineChartDataJsonArray);
 //        salesTypeData
             JSONArray salesTypeDataJsonArray = JSONUtil.createArray();
-            analysisJson.put("salesTypeData",salesTypeDataJsonArray);
+            analysisJson.put("salesTypeData", salesTypeDataJsonArray);
 //        salesTypeDataOnline
             JSONArray salesTypeDataOnlineJsonArray = JSONUtil.createArray();
-            analysisJson.put("salesTypeDataOnline",salesTypeDataOnlineJsonArray);
+            analysisJson.put("salesTypeDataOnline", salesTypeDataOnlineJsonArray);
 //        salesTypeDataOffline
             JSONArray salesTypeDataOfflineJsonArray = JSONUtil.createArray();
-            analysisJson.put("salesTypeDataOffline",salesTypeDataOfflineJsonArray);
+            analysisJson.put("salesTypeDataOffline", salesTypeDataOfflineJsonArray);
 
 //        radarData
 
             JSONArray radarDataJsonArray = JSONUtil.createArray();
 
-            analysisJson.put("radarData",radarDataJsonArray);
+            analysisJson.put("radarData", radarDataJsonArray);
 
             return ResponseEntity.ok(analysisJson);
         }
@@ -152,23 +153,18 @@ public class StockAnalysisDataController {
         JSONObject analysisJson = JSONUtil.createObj();
 
 
-
 //        cardOne
         JSONObject cardOneJson = JSONUtil.createObj();
-        cardOneJson.put("num",200);
-        analysisJson.put("cardOne",cardOneJson);
+        cardOneJson.put("num", 200);
+        analysisJson.put("cardOne", cardOneJson);
 
 //        cardTwo
-
 
 
 //        cardThree
 
 
-
 //        cardFour
-
-
 
 
 //        rankingListData
@@ -177,13 +173,13 @@ public class StockAnalysisDataController {
         int peerLimit = 1;
 
 //        List<StockUsInfoDo> peerList = stockPeerService.findPeerListBySymbol(code);
-        for(StockUsInfoDo s:peerList){
+        for (StockUsInfoDo s : peerList) {
 
             JSONObject peerJson = JSONUtil.createObj();
             JSONObject peJson = JSONUtil.createObj();
             JSONArray peerArray = JSONUtil.createArray();
 
-            if(peerLimit >= 9){
+            if (peerLimit >= 9) {
                 break;
             }
             peerLimit++;
@@ -215,60 +211,66 @@ public class StockAnalysisDataController {
             rankingListDataJsonArray.add(peList);
 
 
-
         }
 
-        analysisJson.put("rankingListData",rankingListDataJsonArray);
+        log.info("返回pe列表");
+        analysisJson.put("rankingListData", rankingListDataJsonArray);
 
 
 //        visitData
         JSONArray visitDataJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("visitData",visitDataJsonArray);
+        analysisJson.put("visitData", visitDataJsonArray);
 
 
 //        visitData2
         JSONArray visitData2JsonArray = JSONUtil.createArray();
 
-        analysisJson.put("visitData2",visitData2JsonArray);
+        analysisJson.put("visitData2", visitData2JsonArray);
 
 
-
+//        有一些股票,例如aapl等因为股价日期和eps日期对不上没法算pe,以后再改将eps日期提前一天.
 //        salesData
         JSONArray salesDataJsonArray = JSONUtil.createArray();
-//        List<PeList> peList = stock.getPeList();
-//
-//        for()
+        List<PERatio> peList = stock.getPeRatios();
+
+        for (PERatio p : peList) {
+            Formatter f = new Formatter();
+            SalesDataEmpty s = new SalesDataEmpty();
+            s.setX(p.getPeriod());
+            String num = String.valueOf(f.format("%1.2f",Double.parseDouble(p.getV())));
+            s.setY(Double.parseDouble(num));
+            salesDataJsonArray.add(s);
+        }
 
 
-
-        analysisJson.put("salesData",salesDataJsonArray);
+        analysisJson.put("salesData", salesDataJsonArray);
 
 
 //        SearchData
         JSONArray SearchDataJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("SearchData",SearchDataJsonArray);
+        analysisJson.put("SearchData", SearchDataJsonArray);
 
 
 //        offlineData
 
         JSONArray offlineDataJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("offlineData",offlineDataJsonArray);
+        analysisJson.put("offlineData", offlineDataJsonArray);
 
 //        offlineChartData
 
 
         JSONArray offlineChartDataJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("offlineChartData",offlineChartDataJsonArray);
+        analysisJson.put("offlineChartData", offlineChartDataJsonArray);
 
 //        salesTypeData
 
         JSONArray salesTypeDataJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("salesTypeData",salesTypeDataJsonArray);
+        analysisJson.put("salesTypeData", salesTypeDataJsonArray);
 
 
 //        salesTypeDataOnline
@@ -276,7 +278,7 @@ public class StockAnalysisDataController {
 
         JSONArray salesTypeDataOnlineJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("salesTypeDataOnline",salesTypeDataOnlineJsonArray);
+        analysisJson.put("salesTypeDataOnline", salesTypeDataOnlineJsonArray);
 
 
 //        salesTypeDataOffline
@@ -284,7 +286,7 @@ public class StockAnalysisDataController {
 
         JSONArray salesTypeDataOfflineJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("salesTypeDataOffline",salesTypeDataOfflineJsonArray);
+        analysisJson.put("salesTypeDataOffline", salesTypeDataOfflineJsonArray);
 
 
 //        radarData
@@ -292,11 +294,11 @@ public class StockAnalysisDataController {
 
         JSONArray radarDataJsonArray = JSONUtil.createArray();
 
-        analysisJson.put("radarData",radarDataJsonArray);
+        analysisJson.put("radarData", radarDataJsonArray);
 
 
-        long endTime =System.currentTimeMillis();
-        log.info(String.valueOf(endTime -startTime));
+        long endTime = System.currentTimeMillis();
+        log.info(String.valueOf(endTime - startTime));
 
         return ResponseEntity.ok(analysisJson);
     }

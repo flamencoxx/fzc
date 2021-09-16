@@ -31,7 +31,7 @@ public class UserInfo implements Serializable {
     /**
      * 用户密码
      */
-    private String userPassword;
+    private String Password;
 
     /**
      * 性别
@@ -62,6 +62,84 @@ public class UserInfo implements Serializable {
      */
     private String createDate;
 
+
+    private Integer status;
+
+
+    private String currentAuthority;
+
+
+    private String country;
+
+
+    private Integer age;
+
+
+    private String type;
+
+
+    private String name;
+
+
+    private String icon;
+
+
+    public String getCurrentAuthority() {
+        return currentAuthority;
+    }
+
+    public void setCurrentAuthority(String currentAuthority) {
+        this.currentAuthority = currentAuthority;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Integer getUserId() {
@@ -80,12 +158,12 @@ public class UserInfo implements Serializable {
         this.userName = userName;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return Password;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String userPassword) {
+        this.Password = userPassword;
     }
 
     public String getSex() {
@@ -146,7 +224,7 @@ public class UserInfo implements Serializable {
 
     public UserInfo(String userName, String userPassword, String sex, String role) {
         this.userName = userName;
-        this.userPassword = userPassword;
+        this.Password = userPassword;
         this.sex = sex;
         this.role = role;
         int i = 1;
@@ -157,12 +235,32 @@ public class UserInfo implements Serializable {
         setCreateDate(sdf.format(date));
     }
 
+    public UserInfo(Integer userId, String userName, String userPassword, String sex, String birthday, String email, String qq, String role, Integer isActive, String createDate, Integer status, String currentAuthority, String country, Integer age, String type, String name, String icon) {
+        this.userId = userId;
+        this.userName = userName;
+        this.Password = userPassword;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.email = email;
+        this.qq = qq;
+        this.role = role;
+        this.isActive = isActive;
+        this.createDate = createDate;
+        this.status = status;
+        this.currentAuthority = currentAuthority;
+        this.country = country;
+        this.age = age;
+        this.type = type;
+        this.name = name;
+        this.icon = icon;
+    }
+
     public UserInfo() {
     }
 
     public UserInfo(String userName, String userPassword, String sex, String birthday, String email, String qq, String role, Integer isActive) {
         this.userName = userName;
-        this.userPassword = userPassword;
+        this.Password = userPassword;
         this.sex = sex;
         this.birthday = birthday;
         this.email = email;
@@ -176,7 +274,7 @@ public class UserInfo implements Serializable {
         final StringBuffer sb = new StringBuffer("UserInfo{");
         sb.append("userId=").append(userId);
         sb.append(", userName='").append(userName).append('\'');
-        sb.append(", userPassword='").append(userPassword).append('\'');
+        sb.append(", userPassword='").append(Password).append('\'');
         sb.append(", sex='").append(sex).append('\'');
         sb.append(", birthday='").append(birthday).append('\'');
         sb.append(", email='").append(email).append('\'');

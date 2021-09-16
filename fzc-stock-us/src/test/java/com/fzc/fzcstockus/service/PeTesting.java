@@ -195,12 +195,12 @@ public class PeTesting {
 
     @Test
     public void test3(){
-        for(int stockID = 1622;stockID < 4575;stockID++){
+        for(int stockID = 4;stockID < 5;stockID++){
 //            String symbol = "IBM";
             StockUsInfoDo stock = stockUsInfoDoRepository.findStockUsInfoDoById(stockID);
 
 
-            List<Eps> epsList = null;
+            List<Eps> epsList = new ArrayList<>();
             try {
                 epsList = stock.getBasicFinancials().getAnnual().getEps();
             } catch (NullPointerException e) {
@@ -224,12 +224,12 @@ public class PeTesting {
 
 
 
-            if(epsList.isEmpty()){
-                continue;
-            }
-            if(historyPriceList.isEmpty()){
-                continue;
-            }
+//            if(epsList.isEmpty()){
+//                continue;
+//            }
+//            if(historyPriceList.isEmpty()){
+//                continue;
+//            }
 
 
 
@@ -257,7 +257,7 @@ public class PeTesting {
 
                         PERatio peRatio = new PERatio();
                         peRatio.setPeriod(historyPrice.getTime());
-                        Double value = Double.parseDouble(historyPrice.getClose()) / Double.parseDouble(eps.getV());
+                        double value = Double.parseDouble(historyPrice.getClose()) / Double.parseDouble(eps.getV());
                         String str = String.valueOf(value);
                         peRatio.setV(str);
                         peRatioList.add(peRatio);

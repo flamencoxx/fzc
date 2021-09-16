@@ -24,7 +24,7 @@
 <!--            <version>3.5.3</version>-->
 <!--        </dependency>-->
 
-        <!-- XXL-JOB 相关依赖 -->
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -50,6 +50,7 @@
 <!--            <version>1.8.0-beta0</version>-->
 <!--        </dependency>-->
 
+        <!-- XXL-JOB 相关依赖 -->
         <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>

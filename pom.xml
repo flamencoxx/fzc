@@ -22,6 +22,7 @@
         <module>fzc-common</module>
         <module>fzc-gateway</module>
         <module>fzc-stock-us</module>
+<!--        <module>fzc-security</module>-->
     </modules>
     <properties>
         <java.version>1.8</java.version>
