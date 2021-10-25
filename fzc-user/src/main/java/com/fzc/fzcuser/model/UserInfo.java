@@ -3,6 +3,7 @@ package com.fzc.fzcuser.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -26,12 +27,13 @@ public class UserInfo implements Serializable {
     /**
      * 用户名
      */
-    private String userName;
+    @TextIndexed(weight = 1)
+    private String username;
 
     /**
      * 用户密码
      */
-    private String Password;
+    private String password;
 
     /**
      * 性别
@@ -43,6 +45,7 @@ public class UserInfo implements Serializable {
      */
     private String birthday;
 
+    @TextIndexed(weight = 1)
     private String email;
 
     private String qq;
@@ -83,6 +86,18 @@ public class UserInfo implements Serializable {
 
     private String icon;
 
+
+    @TextIndexed(weight = 1)
+    private String phone;
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getCurrentAuthority() {
         return currentAuthority;
@@ -150,20 +165,20 @@ public class UserInfo implements Serializable {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String userPassword) {
-        this.Password = userPassword;
+        this.password = userPassword;
     }
 
     public String getSex() {
@@ -222,9 +237,9 @@ public class UserInfo implements Serializable {
         this.createDate = createDate;
     }
 
-    public UserInfo(String userName, String userPassword, String sex, String role) {
-        this.userName = userName;
-        this.Password = userPassword;
+    public UserInfo(String username, String userPassword, String sex, String role) {
+        this.username = username;
+        this.password = userPassword;
         this.sex = sex;
         this.role = role;
         int i = 1;
@@ -235,10 +250,10 @@ public class UserInfo implements Serializable {
         setCreateDate(sdf.format(date));
     }
 
-    public UserInfo(Integer userId, String userName, String userPassword, String sex, String birthday, String email, String qq, String role, Integer isActive, String createDate, Integer status, String currentAuthority, String country, Integer age, String type, String name, String icon) {
+    public UserInfo(Integer userId, String username, String userPassword, String sex, String birthday, String email, String qq, String role, Integer isActive, String createDate, Integer status, String currentAuthority, String country, Integer age, String type, String name, String icon) {
         this.userId = userId;
-        this.userName = userName;
-        this.Password = userPassword;
+        this.username = username;
+        this.password = userPassword;
         this.sex = sex;
         this.birthday = birthday;
         this.email = email;
@@ -258,9 +273,9 @@ public class UserInfo implements Serializable {
     public UserInfo() {
     }
 
-    public UserInfo(String userName, String userPassword, String sex, String birthday, String email, String qq, String role, Integer isActive) {
-        this.userName = userName;
-        this.Password = userPassword;
+    public UserInfo(String username, String userPassword, String sex, String birthday, String email, String qq, String role, Integer isActive) {
+        this.username = username;
+        this.password = userPassword;
         this.sex = sex;
         this.birthday = birthday;
         this.email = email;
@@ -273,8 +288,8 @@ public class UserInfo implements Serializable {
     public String toString() {
         final StringBuffer sb = new StringBuffer("UserInfo{");
         sb.append("userId=").append(userId);
-        sb.append(", userName='").append(userName).append('\'');
-        sb.append(", userPassword='").append(Password).append('\'');
+        sb.append(", userName='").append(username).append('\'');
+        sb.append(", userPassword='").append(password).append('\'');
         sb.append(", sex='").append(sex).append('\'');
         sb.append(", birthday='").append(birthday).append('\'');
         sb.append(", email='").append(email).append('\'');

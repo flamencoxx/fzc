@@ -1,16 +1,16 @@
-package com.fzc.fzcuser.model;
+/*package com.fzc.fzcuser.model;
 
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.coreGrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-/**
+*//**
  * @author Flamenco.xxx
  * @date 2021/9/15 21:24
- */
+ *//*
 public class UserDetail implements UserDetails {
     private UserInfo userInfo;
 
@@ -61,4 +61,4 @@ public class UserDetail implements UserDetails {
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
     }
-}
+}*/

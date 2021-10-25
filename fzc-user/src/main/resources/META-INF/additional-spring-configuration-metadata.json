@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "secure.ignored.urls",
+      "type": "java.lang.String",
+      "description": "Description for secure.ignored.urls."
+  }
+] }

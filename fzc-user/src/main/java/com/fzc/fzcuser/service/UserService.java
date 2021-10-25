@@ -1,7 +1,6 @@
 package com.fzc.fzcuser.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fzc.fzcuser.model.UserDetail;
 import com.fzc.fzcuser.model.UserInfo;
 
 /**
@@ -10,7 +9,7 @@ import com.fzc.fzcuser.model.UserInfo;
  */
 public interface UserService extends IService<UserInfo> {
 
-    public String login(String username,String password);
+    public boolean login(String username,String password);
 
-    public UserDetail loadUserByUsername(String username);
+    public UserInfo loadUserByUsername(String username);
 }
