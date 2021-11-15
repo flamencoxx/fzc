@@ -78,7 +78,6 @@ public class StockPeerServiceImpl extends ServiceImpl<StockUsInfoMapper, StockUs
                 futureList.add(future);
             }
         }
-
         for(Future<StockUsInfoDo> future:futureList){
             try {
                 StockUsInfoDo s = future.get();

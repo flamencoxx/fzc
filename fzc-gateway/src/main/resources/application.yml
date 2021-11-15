@@ -9,7 +9,7 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
 zuul:
-  prefix: /friday # \u8DEF\u7531\u8DEF\u5F84\u524D\u7F00
+  prefix: /api # \u8DEF\u7531\u8DEF\u5F84\u524D\u7F00
   routes:
     fzc-user: /user/** # \u7528\u6237\u5FAE\u670D\u52A1\u7684\u6620\u5C04\u8DEF\u5F84
     fzc-stock-us: /us/** # \u8D26\u5355\u5FAE\u670D\u52A1\u6620\u5C04\u8DEF\u5F84

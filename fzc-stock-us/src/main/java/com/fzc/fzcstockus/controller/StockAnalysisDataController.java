@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collections;
 import java.util.Formatter;
 import java.util.List;
 import java.util.concurrent.*;
@@ -233,6 +234,7 @@ public class StockAnalysisDataController {
 //        salesData
         JSONArray salesDataJsonArray = JSONUtil.createArray();
         List<PERatio> peList = stock.getPeRatios();
+        Collections.reverse(peList);
 
         for (PERatio p : peList) {
             Formatter f = new Formatter();

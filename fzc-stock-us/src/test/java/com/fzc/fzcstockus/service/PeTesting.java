@@ -195,7 +195,7 @@ public class PeTesting {
 
     @Test
     public void test3(){
-        for(int stockID = 4;stockID < 5;stockID++){
+        for(int stockID = 1622;stockID < 4757;stockID++){
 //            String symbol = "IBM";
             StockUsInfoDo stock = stockUsInfoDoRepository.findStockUsInfoDoById(stockID);
 

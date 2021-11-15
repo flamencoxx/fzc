@@ -1,8 +1,6 @@
 server:
   port: 8084
 
-
-
 # xxl-job
 xxl:
   job:
@@ -19,6 +17,14 @@ xxl:
 
 
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        server-addr: http://localhost:8848
+        file-extension: yaml
+
   # 对应 RedisProperties 类
   redis:
     lettuce:
@@ -42,12 +48,13 @@ spring:
     username: guest
     password: guest
   data:
+    elasticsearch:
     mongodb:
-      auto-index-creation: true
-      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
-      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
-      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
-#      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
+#      auto-index-creation: true
+#      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
+#      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
+#      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
+      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
 
   application:
     name: fzc-stock-us
@@ -76,10 +83,13 @@ spring:
 #      additional-paths: src/java/main
 #      additional-exclude: static/**,public/**,WEB-INF/**
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+
+
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
@@ -95,3 +105,13 @@ mybatis-plus:
     map-underscore-to-camel-case: true
 arthas:
   agent-id: fzc-usStock
+
+redis:
+  database: fzc
+  key:
+    stockName: 'fzc:stockUsName'
+    StockDescription: 'fzc:stockDescription'
+    admin: 'fzc:stockUs'
+    resourceList: 'fzc:resourceList'
+  expire:
+    common: 86400 # 24小时

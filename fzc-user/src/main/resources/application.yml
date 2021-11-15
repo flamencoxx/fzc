@@ -5,6 +5,13 @@ server:
 
 
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        server-addr: http://localhost:8848
+        file-extension: yaml
   redis:
     lettuce:
       pool:
@@ -27,11 +34,11 @@ spring:
     password: guest
   data:
     mongodb:
-      auto-index-creation: true
-      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
-      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
-      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
-  #      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
+      #      auto-index-creation: true
+      #      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
+      #      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
+      #      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
+      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
 
   application:
     name: fzc-user
@@ -43,13 +50,13 @@ spring:
     hikari:
       max-lifetime: 288300
       maximum-pool-size: 9
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
-  instance:
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 15
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+#  instance:
+#    lease-renewal-interval-in-seconds: 5
+#    lease-expiration-duration-in-seconds: 15
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml

@@ -10,7 +10,6 @@ import com.fzc.fzcfutu.repository.StockInfoRepository;
 import com.fzc.fzcfutu.service.StockInfoService;
 import com.fzc.fzcfutu.testing.yahoo;
 import com.fzc.fzcfutu.tool.RestClient;
-import org.apache.commons.math.stat.descriptive.summary.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

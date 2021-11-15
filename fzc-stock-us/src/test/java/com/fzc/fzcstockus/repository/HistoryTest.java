@@ -148,7 +148,7 @@ public class HistoryTest {
     @Test
     public void fetchHistory() {
 
-        for (int stockId = 207; stockId < 4757; stockId++) {
+        for (int stockId = 1; stockId < 4757; stockId++) {
             StockUsInfoDo stock = stockUsInfoDoRepository.findStockUsInfoDoById(stockId);
             String symbol = stock.getSymbol();
             List<HistoryPrice> historyPrices = new ArrayList<HistoryPrice>();

@@ -25,9 +25,6 @@ public class StockUsHistoryController {
     private StockUsInfoService stockUsInfoService;
 
 
-
-
-    
     @GetMapping("UsDayHistory")
     public ResponseEntity<JSONObject> searchUsDayHistory(@RequestParam(value="code")String code){
         JSONObject stockJson = stockUsInfoService.searchUsHistoryDay(code);
