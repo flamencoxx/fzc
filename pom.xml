@@ -22,6 +22,7 @@
         <module>fzc-common</module>
         <module>fzc-gateway</module>
         <module>fzc-stock-us</module>
+        <module>fzc-search-es</module>
 <!--        <module>fzc-security</module>-->
     </modules>
     <properties>

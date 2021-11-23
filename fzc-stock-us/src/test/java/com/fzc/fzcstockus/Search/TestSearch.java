@@ -59,6 +59,8 @@ public class TestSearch {
     private StockUsImportService stockUsImportService;
 
 
+    @Autowired
+    private ESSearchService esSearchService;
 
     @Test
     public void test1(){
@@ -78,6 +80,15 @@ public class TestSearch {
         });
         set.elementSet().forEach(s -> {
             System.out.println(s + ":" + set.count(s));
+        });
+    }
+
+    @Test
+    public void esSearchTesting(){
+        String str = "ib";
+        List<String> list = esSearchService.searchByKeyword(str);
+        list.forEach(k ->{
+           System.out.println(k);
         });
     }
 

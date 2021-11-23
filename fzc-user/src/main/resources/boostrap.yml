@@ -1,0 +1,15 @@
+#spring:
+#  profiles:
+#    active: dev
+#  application:
+#    name: mall-admin
+spring:
+  application:
+    name: mall-admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        server-addr: http://localhost:8848
+        file-extension: yaml
