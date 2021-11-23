@@ -114,8 +114,8 @@ public class StockUsOtherServiceImpl extends ServiceImpl<StockUsImportMapper, St
         Map<Object, Object> map1 = redisService.hGetAll(key1);
         Map<Object, Object> map2 = redisService.hGetAll(key2);
         Multiset<String> set = HashMultiset.create();
-        map1.entrySet().forEach(e -> set.add(e.toString()));
-        map2.entrySet().forEach(e -> set.add(e.toString()));
+        map1.entrySet().forEach(e -> set.add(e.getKey().toString()));
+        map2.entrySet().forEach(e -> set.add(e.getKey().toString()));
         List<String> strList = SearchUtil.splitWords(str);
         List<String> resList =  strList.stream().filter(s -> !set.contains(s)).collect(Collectors.toList());
         String word = Joiner.on(" ").skipNulls().join(resList);

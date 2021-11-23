@@ -1,0 +1,89 @@
+server:
+  port: 8087
+
+
+spring:
+  elasticsearch:
+    rest:
+      uris: 127.0.0.1:9200
+  # ?? RedisProperties ?
+  redis:
+    lettuce:
+      pool:
+        max-active: 8 # ????????
+        max-idle: 8 # ??????????
+        min-idle: 0 # ??????????
+        max-wait: -1ms # ????????????????????
+    host: 127.0.0.1
+    port: 6379
+    #    password: # Redis ???????????????????? Redis ???
+    database: 0 # Redis ???????? 0 ?
+    timeout: 30000ms # Redis ?????????????
+    # ?? RedissonProperties ?
+  #    redisson:
+  #      config: classpath:redisson.yml # ?????????? org.redisson.config.Config ??
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+    mongodb:
+      #      auto-index-creation: true
+      #      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
+      #      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
+      #      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
+      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
+
+  application:
+    name: fzc-search-es
+  datasource:
+    url: jdbc:mysql:///flamenco?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    #    type: com.alibaba.druid.pool.DruidDataSource # ????? DruidDataSource
+    #      # Druid ???????? DruidDataSource ?? setting ?????
+    #      druid:
+    #        min-idle: 0 # ???????????????? 0 ??
+    #        max-active: 20 # ??????????????????????? 8 ??
+    #        filter:
+    #          stat: # ?? StatFilter ????? https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+    #            log-slow-sql: true # ???????
+    #            slow-sql-millis: 5000 # ? SQL ?????????
+    hikari:
+      max-lifetime: 288300
+      maximum-pool-size: 9
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        server-addr: http://localhost:8848
+        file-extension: yaml
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  typeAliasesPackage: com.fzc.fzcsearches.model
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+
+redis:
+  database: fzc
+  key:
+    sector: 'Us:sector'
+    industry: 'Us:industry'
+    marketValue: 'Us:marketValue'
+    removeNameCom: 'Us:removeNameCom'
+    removeDescCom: 'Us:removeDescCom'
+  expire:
+    common: 86400

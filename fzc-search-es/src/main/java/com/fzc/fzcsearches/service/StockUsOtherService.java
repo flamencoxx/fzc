@@ -11,8 +11,16 @@ import java.util.List;
  */
 public interface StockUsOtherService  extends IService<StockUsImport> {
 
+    /**
+     * 将要删除的股票名字字段字符存入redis，并返回字符表
+     * @return
+     */
     List<String> remNameComStr();
 
+    /**
+     * 将要删除的描述字段字符存入redis，并返回字符表
+     * @return
+     */
     List<String> remDescComStr();
 
 
