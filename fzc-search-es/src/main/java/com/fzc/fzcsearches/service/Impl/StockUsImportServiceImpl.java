@@ -7,6 +7,7 @@ import com.fzc.fzcsearches.model.StockUsImport;
 import com.fzc.fzcsearches.repository.EsStockUsImportRepository;
 import com.fzc.fzcsearches.service.RedisService;
 import com.fzc.fzcsearches.service.StockUsImportService;
+import com.fzc.fzcsearches.service.StockUsOtherService;
 import com.fzc.fzcsearches.util.SearchUtil;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Lists;
@@ -55,6 +56,9 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
     @Autowired
     private ElasticsearchRestTemplate elasticsearchRestTemplate;
 
+    @Autowired
+    private StockUsOtherService stockUsOtherService;
+
     @Value("${redis.database}")
     private String REDIS_DATABASE;
     @Value("${redis.expire.common}")
@@ -78,7 +82,7 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
         list.addAll(stockUsImportService.list());
         Multiset<String> set = HashMultiset.create();
         list.forEach(s -> {
-            List<String> sectorList = SearchUtil.splitWords(s.getSector());
+            List<String> sectorList = SearchUtil.splitWords3(s.getSector());
             sectorList.forEach(k ->{
                 set.add(k);
             });
@@ -101,7 +105,7 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
         list.addAll(stockUsImportService.list());
         Multiset<String> set = HashMultiset.create();
         list.forEach(s -> {
-            List<String> sectorList = SearchUtil.splitWords(s.getIndustry());
+            List<String> sectorList = SearchUtil.splitWords3(s.getIndustry());
             sectorList.forEach(k ->{
                 set.add(k);
             });
@@ -189,6 +193,7 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
 
     @Override
     public List<EsStockUsImport> searchByKeywords(String keywords) {
+        keywords = stockUsOtherService.convertStr(keywords);
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
         if (StringUtils.isEmpty(keywords)) {
             return new ArrayList<EsStockUsImport>();
@@ -218,6 +223,8 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
 
     @Override
     public boolean checkIsSector(String word) {
+        word = word.trim();
+        word = word.toLowerCase();
         String key = REDIS_DATABASE + ":" + REDIS_KEY_SECTOR;
         boolean result = redisService.sIsMember(key,word);
         return result;

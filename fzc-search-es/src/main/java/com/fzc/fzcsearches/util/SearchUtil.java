@@ -36,37 +36,61 @@ public class SearchUtil {
         return list;
     }
 
-    public static boolean isWords(String words){
+    public static boolean isWords(String words) {
 
         return false;
     }
 
+    public static List<String> splitWords2(String words) {
+        List<String> list = Splitter.onPattern(" |-")
+                .trimResults(CharMatcher.anyOf(",")
+                        .or(CharMatcher.whitespace())
+                        .or(CharMatcher.anyOf("."))
+                        .or(CharMatcher.anyOf(";"))
+                        .or(CharMatcher.anyOf("&"))
+                        .or(CharMatcher.anyOf("-")))
+                .splitToList(words);
+        if (list.isEmpty()) {
+            return new ArrayList<String>();
+        }
+        return list;
+    }
+
+    public static List<String> splitWords3(String words) {
+        String result = words.replaceAll("\\p{Punct}", " ");
+        List<String> list = Splitter.onPattern(" |-")
+                .trimResults(CharMatcher.anyOf(",")
+                        .or(CharMatcher.whitespace()))
+                .omitEmptyStrings()
+                .splitToList(result);
+        if (list.isEmpty()) {
+            return new ArrayList<String>();
+        }
+        return list;
+    }
 
     public static int wordSum(String str) {
-        int word  = 0;
-        for(int i=0;i<str.length();i++) {
-            char c  = str.charAt(i);
-
-            if(i==(str.length()-1) && (c>='a'&&c<='z' || c>='A'&&c<='Z')){
+        int word = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (i == (str.length() - 1) && (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')) {
                 word++;
             }
-
-            if(c>='a'&&c<='z' || c>='A'&&c<='Z') {
+            if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
                 continue;
-            }
-            else {
+            } else {
                 word++;
             }
         }
         return word;
     }
 
-    public static boolean checkIsSector(){
+    public static boolean checkIsSector() {
         return false;
     }
 
-//    Remove redundant characters
-    public static String removeChar(String word){
+    //    Remove redundant characters
+    public static String removeChar(String word) {
         List<String> words = SearchUtil.splitWords(word);
         return null;
     }

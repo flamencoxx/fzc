@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -58,7 +59,7 @@ public class StockUsOtherServiceImpl extends ServiceImpl<StockUsImportMapper, St
         List<StockUsImport> list = stockUsImportService.list();
         Multiset<String> set = HashMultiset.create();
         list.forEach(k -> {
-            List<String> strList = SearchUtil.splitWords(k.getName().toLowerCase());
+            List<String> strList = SearchUtil.splitWords3(k.getName().toLowerCase());
             strList.forEach(str -> set.add(str));
         });
         Map<String,Integer> map = Maps.newHashMap();
@@ -87,7 +88,7 @@ public class StockUsOtherServiceImpl extends ServiceImpl<StockUsImportMapper, St
         List<StockUsImport> list = stockUsImportService.list();
         Multiset<String> set = HashMultiset.create();
         list.forEach(k -> {
-            List<String> strList = SearchUtil.splitWords(k.getDescription().toLowerCase());
+            List<String> strList = SearchUtil.splitWords3(k.getDescription().toLowerCase());
             strList.forEach(str -> set.add(str));
         });
         Map<String,Integer> map = Maps.newHashMap();
@@ -116,9 +117,24 @@ public class StockUsOtherServiceImpl extends ServiceImpl<StockUsImportMapper, St
         Multiset<String> set = HashMultiset.create();
         map1.entrySet().forEach(e -> set.add(e.getKey().toString()));
         map2.entrySet().forEach(e -> set.add(e.getKey().toString()));
-        List<String> strList = SearchUtil.splitWords(str);
-        List<String> resList =  strList.stream().filter(s -> !set.contains(s)).collect(Collectors.toList());
-        String word = Joiner.on(" ").skipNulls().join(resList);
+        List<String> strList = new ArrayList<String>(SearchUtil.splitWords3(str));
+//        run到下面这行s就没了?
+
+//        method one
+        List<String> resList =  strList.stream().filter(key -> !set.contains(key)).collect(Collectors.toList());
+
+//        method two
+//        strList.removeIf(set::contains);
+
+//        method three
+//        strList.forEach(k->{
+//           if(set.contains(k)) {
+//               boolean res  = strList.remove(k);
+//               System.out.println("word:" + k + ":" + res);
+//           }
+//        });
+
+        String word = Joiner.on(" ").skipNulls().join(strList);
         return word;
     }
 
