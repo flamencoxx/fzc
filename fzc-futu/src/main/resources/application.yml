@@ -13,10 +13,10 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
-#      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
-#      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
-#      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
+#      uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
+      host: localhost # mongodb\u7684\u8FDE\u63A5\u5730\u5740
+      port: 27017 # mongodb\u7684\u8FDE\u63A5\u7AEF\u53E3\u53F7
+      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
 
 #
 #spring:
