@@ -3,13 +3,15 @@ package com.fzc.fzcstockus.controller;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.fzc.fzcstockus.DO.StockUsInfoDo;
-import com.fzc.fzcstockus.model.BasicFinancials;
+import com.fzc.fzcstockus.model.StockProfile2;
 import com.fzc.fzcstockus.mutiThread.FetchBasicFinancial;
 import com.fzc.fzcstockus.mutiThread.FetchCompanyInfo;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
 import com.fzc.fzcstockus.servcie.StockCompanyInfoService;
+import com.fzc.fzcstockus.servcie.StockProfile2Service;
 import com.fzc.fzcstockus.servcie.StockUsInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -52,6 +53,8 @@ public class StockUsOtherDetailsController {
     @Autowired
     private FetchCompanyInfo fetchCompanyInfo;
 
+    @Autowired
+    private StockProfile2Service stockProfile2Service;
 
     @GetMapping(value="data")
     public ResponseEntity<JSONObject> findOtherDetailsOfUsStock(@RequestParam(value="code")String code){
@@ -65,6 +68,12 @@ public class StockUsOtherDetailsController {
         String revenue = stockUsInfoDo.getCompanyOverview().getRevenueTTM();
         String grossProfit = stockUsInfoDo.getCompanyOverview().getGrossProfitTTM();
         String sector = stockUsInfoDo.getCompanyOverview().getSector();
+
+        QueryWrapper<StockProfile2> wrapper = new QueryWrapper<>();
+        wrapper.eq("symbol",code.toUpperCase());
+        StockProfile2 stockProfile2 = stockProfile2Service.getOne(wrapper);
+        String webUrl = stockProfile2.getWeburl();
+        String logo = stockProfile2.getLogo();
 
 
 //        BasicFinancials basicFinancials = new BasicFinancials();
@@ -82,6 +91,8 @@ public class StockUsOtherDetailsController {
         jsonObject.put("RevenueTTM",revenue);
         jsonObject.put("GrossProfitTTM",grossProfit);
         jsonObject.put("Sector",sector);
+        jsonObject.put("webUrl",webUrl);
+        jsonObject.put("logo",logo);
 
 
 

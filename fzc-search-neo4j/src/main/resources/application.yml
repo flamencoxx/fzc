@@ -33,7 +33,7 @@ spring:
       #      database: flamenco # mongodb\u7684\u8FDE\u63A5\u7684\u6570\u636E\u5E93
       uri: mongodb://flamenco:123456@120.77.182.105:27017/flamenco?main?authSource=admin&authMechanism=SCRAM-SHA-1
     neo4j:
-      database: flamenco
+      database: neo4j
       uri: bolt://localhost:7687
 
   application:
@@ -65,11 +65,11 @@ spring:
         file-extension: yaml
   neo4j:
     authentication:
-      username: neo4j
-      password: 123456
+      username: flamenco
+      password: 123
 
 mybatis-plus:
-  mapper-locations: classpath:/mapper/**/*.xml
+  mapper-locations: classpath:/mapper/**/*.xmler
   typeAliasesPackage: com.fzc.fzcsearchneo4j.model
   global-config:
     db-config:
