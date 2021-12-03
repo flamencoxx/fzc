@@ -1,4 +1,4 @@
-package com.fzc.fzcstockus.util;
+package com.fzc.fzcsearchneo4j.util;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;

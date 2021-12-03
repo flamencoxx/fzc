@@ -8,6 +8,7 @@ import com.fzc.fzcstockus.servcie.StockProfile2Service;
 import com.fzc.fzcstockus.servcie.StockUsImportService;
 import com.fzc.fzcstockus.tool.RestTemplateUtils;
 import com.fzc.fzcstockus.util.ImageUtil;
+import org.apache.commons.lang.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -108,6 +109,19 @@ public class StockProfileTesting {
             byte[] images = ImageUtil.getImageFromNetByUrl(url);
             String fileName = code + ".png";
             ImageUtil.writeImageToDisk(images,fileName);
+        });
+    }
+
+    @Test
+    public void copyToDatabase() {
+        List<StockProfile2> list = stockProfile2Service.list();
+        list.forEach(k -> {
+           if(!StringUtils.isEmpty(k.getLogo())){
+               byte[] image = ImageUtil.getImageFromNetByUrl(k.getLogo());
+               k.setImages(image);
+               boolean result = stockProfile2Service.updateById(k);
+               System.out.println(k.getId() + ":" + result);
+           }
         });
     }
 }

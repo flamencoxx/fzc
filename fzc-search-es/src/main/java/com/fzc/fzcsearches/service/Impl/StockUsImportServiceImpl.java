@@ -15,6 +15,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multiset;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
+import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
 import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
@@ -170,9 +171,9 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
             List<FunctionScoreQueryBuilder.FilterFunctionBuilder> filterFunctionBuilders = new ArrayList<>();
             filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.prefixQuery("symbol", keyword),
                     ScoreFunctionBuilders.weightFactorFunction(10)));
-            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.matchQuery("name", keyword),
+            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.fuzzyQuery("name", keyword).fuzziness(Fuzziness.AUTO),
                     ScoreFunctionBuilders.weightFactorFunction(6)));
-            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.matchQuery("description", keyword),
+            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.fuzzyQuery("description", keyword).fuzziness(Fuzziness.AUTO),
                     ScoreFunctionBuilders.weightFactorFunction(2)));
             FunctionScoreQueryBuilder.FilterFunctionBuilder[] builders = new FunctionScoreQueryBuilder.FilterFunctionBuilder[filterFunctionBuilders.size()];
             filterFunctionBuilders.toArray(builders);
@@ -199,9 +200,9 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
             return new ArrayList<EsStockUsImport>();
         } else {
             List<FunctionScoreQueryBuilder.FilterFunctionBuilder> filterFunctionBuilders = new ArrayList<>();
-            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.matchQuery("name", keywords),
+            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.fuzzyQuery("name", keywords).fuzziness(Fuzziness.AUTO),
                     ScoreFunctionBuilders.weightFactorFunction(6)));
-            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.matchQuery("description", keywords),
+            filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.fuzzyQuery("description", keywords).fuzziness(Fuzziness.AUTO),
                     ScoreFunctionBuilders.weightFactorFunction(2)));
             FunctionScoreQueryBuilder.FilterFunctionBuilder[] builders = new FunctionScoreQueryBuilder.FilterFunctionBuilder[filterFunctionBuilders.size()];
             filterFunctionBuilders.toArray(builders);
