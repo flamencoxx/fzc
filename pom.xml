@@ -23,6 +23,7 @@
         <module>fzc-gateway</module>
         <module>fzc-stock-us</module>
         <module>fzc-search-es</module>
+        <module>fzc-search-neo4j</module>
 <!--        <module>fzc-security</module>-->
     </modules>
     <properties>

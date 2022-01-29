@@ -23,7 +23,7 @@ public class FzcSearchEsApplication {
     public static void main(String[] args) {
         SpringApplication.run(FzcSearchEsApplication.class, args);
     }
-    int importSectorRes = stockUsImportService.importSectorToRedis();
-    int importIndustryRes = stockUsImportService.importIndustryToRedis();
-    int importMarketValueRes = stockUsImportService.importMarketValue();
+//    int importSectorRes = stockUsImportService.importSectorToRedis();
+//    int importIndustryRes = stockUsImportService.importIndustryToRedis();
+//    int importMarketValueRes = stockUsImportService.importMarketValue();
 }
