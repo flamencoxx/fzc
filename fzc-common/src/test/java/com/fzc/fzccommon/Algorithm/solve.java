@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @date 2021/8/20 18:03
  */
 @SpringBootTest
-public class solve {
+public class Solve {
 
     @Test
     public void test() {

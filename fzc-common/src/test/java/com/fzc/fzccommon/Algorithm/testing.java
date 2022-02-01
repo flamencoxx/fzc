@@ -4,7 +4,7 @@ package com.fzc.fzccommon.Algorithm;
  * @author Flamenco.xxx
  * @date 2021/9/11 9:26
  */
-public class testing {
+public class Testing {
     public static void main(String[] args){
         String pe = "25.23124";
         String[] head = pe.split("\\.");
