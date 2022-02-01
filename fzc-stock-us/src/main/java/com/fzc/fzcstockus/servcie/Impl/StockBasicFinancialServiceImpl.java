@@ -4,21 +4,40 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fzc.fzcstockus.DO.StockUsInfoDo;
-import com.fzc.fzcstockus.config.RedisConfig;
 import com.fzc.fzcstockus.mapper.StockUsInfoMapper;
-import com.fzc.fzcstockus.model.*;
+import com.fzc.fzcstockus.model.Annual;
+import com.fzc.fzcstockus.model.BasicFinancials;
+import com.fzc.fzcstockus.model.CashRatio;
+import com.fzc.fzcstockus.model.CurrentRatio;
+import com.fzc.fzcstockus.model.EbitPerShare;
+import com.fzc.fzcstockus.model.Eps;
+import com.fzc.fzcstockus.model.GrossMargin;
+import com.fzc.fzcstockus.model.LongtermDebtTotalAsset;
+import com.fzc.fzcstockus.model.LongtermDebtTotalCapital;
+import com.fzc.fzcstockus.model.LongtermDebtTotalEquity;
+import com.fzc.fzcstockus.model.Metric;
+import com.fzc.fzcstockus.model.NetDebtToTotalCapital;
+import com.fzc.fzcstockus.model.NetDebtToTotalEquity;
+import com.fzc.fzcstockus.model.NetMargin;
+import com.fzc.fzcstockus.model.OperatingMargin;
+import com.fzc.fzcstockus.model.PretaxMargin;
+import com.fzc.fzcstockus.model.SalesPerShare;
+import com.fzc.fzcstockus.model.SgaToSale;
+import com.fzc.fzcstockus.model.StockUsInfo;
+import com.fzc.fzcstockus.model.TotalDebtToEquity;
+import com.fzc.fzcstockus.model.TotalDebtToTotalAsset;
+import com.fzc.fzcstockus.model.TotalDebtToTotalCapital;
+import com.fzc.fzcstockus.model.TotalRatio;
 import com.fzc.fzcstockus.repository.StockUsInfoDoRepository;
 import com.fzc.fzcstockus.servcie.StockBasicFinancialService;
 import com.fzc.fzcstockus.tool.RestTemplateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Flamenco.xxx
@@ -671,7 +690,7 @@ public class StockBasicFinancialServiceImpl extends ServiceImpl<StockUsInfoMappe
         stock.setBasicFinancials(basicFinancials);
         stockUsInfoDoRepository.save(stock);
 
-        log.info("[更新美股基本面数据BasicFinancial]:"+symbol + ":"+ stock.getSymbol());
+//        log.info("[更新美股基本面数据BasicFinancial]:"+symbol + ":"+ stock.getSymbol());
 //        System.out.println("现在是"+symbol + ":"+ stock.getSymbol());
 
         /*try {

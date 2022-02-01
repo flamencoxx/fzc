@@ -5,7 +5,7 @@
 #    name: mall-admin
 spring:
   application:
-    name: fzc-user
+    name: fzc-user-shiro
   cloud:
     nacos:
       discovery:

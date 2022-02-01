@@ -1,5 +1,7 @@
 package com.fzc.fzcstockus.servcie.Impl;
 
+import cn.hutool.core.date.TimeInterval;
+import cn.hutool.core.lang.Console;
 import cn.hutool.json.JSONObject;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -134,7 +136,9 @@ public class FinancialsReportServiceImpl  extends ServiceImpl<StockUsReportMappe
     public FinancialsReported getReportFast(String code) {
         QueryWrapper<StockUsReport> query = new QueryWrapper<>();
         query.eq("symbol",code);
+        TimeInterval timer = new TimeInterval();
         StockUsReport stockUsReport = this.getOne(query);
+        Console.log(timer.interval());
         FinancialsReported obj = JSON.parseObject(stockUsReport.getReportFast(),FinancialsReported.class);
         return obj;
     }
