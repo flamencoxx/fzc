@@ -1,4 +1,4 @@
-package com.fzc.fzcstockus.servcie;
+package com.fzc.fzcstocka.service;
 
 import java.util.List;
 import java.util.Map;

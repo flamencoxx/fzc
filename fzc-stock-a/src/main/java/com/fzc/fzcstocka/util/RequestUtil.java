@@ -1,4 +1,4 @@
-package com.fzc.fzcsearchneo4j.util;
+package com.fzc.fzcstocka.util;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;

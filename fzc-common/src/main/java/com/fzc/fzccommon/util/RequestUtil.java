@@ -7,7 +7,7 @@ import java.net.UnknownHostException;
 /**
  * 请求工具类
  *
- * @author macro
+ * @author flamencoxx
  * @date 2020/10/8
  */
 public class RequestUtil {

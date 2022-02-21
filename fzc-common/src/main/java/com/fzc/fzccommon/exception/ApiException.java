@@ -5,7 +5,7 @@ import com.fzc.fzccommon.api.IErrorCode;
 /**
  * 自定义API异常
  *
- * @author macro
+ * @author flamencoxx
  * @date 2020/2/27
  */
 public class ApiException extends RuntimeException {

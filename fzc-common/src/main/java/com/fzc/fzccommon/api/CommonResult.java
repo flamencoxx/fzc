@@ -3,7 +3,7 @@ package com.fzc.fzccommon.api;
 /**
  * 通用返回对象
  *
- * @author macro
+ * @author flamencoxx
  * @date 2019/4/19
  */
 public class CommonResult<T> {

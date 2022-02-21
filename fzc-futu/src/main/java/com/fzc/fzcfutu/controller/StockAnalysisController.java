@@ -6,7 +6,6 @@ import com.fzc.fzcfutu.service.StockHistoryService;
 import com.fzc.fzcfutu.service.StockInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import yahoofinance.Stock;
 
 /**
  * @author Flamenco.xxx
@@ -27,6 +26,7 @@ public class StockAnalysisController {
 
     @Autowired
     private StockInfoRepository stockInfoRepository;
+
 
 
 

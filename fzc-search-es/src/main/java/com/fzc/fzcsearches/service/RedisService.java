@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * redis操作Service
  *
- * @author macro
+ * @author flamencoxx
  * @date 2020/3/3
  */
 public interface RedisService {

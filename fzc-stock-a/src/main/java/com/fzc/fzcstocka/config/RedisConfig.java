@@ -1,12 +1,15 @@
-package com.fzc.fzccommon.config;
+package com.fzc.fzcstocka.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
-import com.fzc.fzccommon.service.RedisService;
-import com.fzc.fzccommon.service.impl.RedisServiceImpl;
+import com.fzc.fzcstocka.service.Impl.RedisServiceImpl;
+import com.fzc.fzcstocka.service.RedisService;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
@@ -20,12 +23,19 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 /**
- * Redis基础配置
+ * Redis配置类
  *
- * @author flamencoxx
- * @date 2020/6/19
+ * @author flamenco
+ * @date 2020/3/2
  */
-public class BaseRedisConfig {
+@EnableCaching
+@Configuration
+public class RedisConfig extends CachingConfigurerSupport {
+
+    /**
+     * redis数据库自定义key
+     */
+    public  static final String REDIS_KEY_DATABASE="fzc";
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
