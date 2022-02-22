@@ -1,72 +1,62 @@
-package com.fzc.fzcstocka.model;
+package com.fzc.fzcsearches.domain;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * @author flamenco.xxx
- * @date 2022/2/21 16:02
+ * @date 2022/2/22 15:17
  */
-@Document(collection = "Market_SecuritiesInfo")
-public class MarketSecuritiesInfo implements Serializable {
+@Document(indexName = "stock_a",createIndex = false)
+public class EsStockAimport {
 
     @Id
-    @Field("_id")
-    private String id;
+    private Long id;
 
-    @Field("stock_identity")
+    @Field(type=FieldType.Keyword)
     private String stockIdentity;
 
-    private String area;
-
-    private String code;
-
-    @Field("curr_type")
-    private String currType;
-
-    private String enname;
-
-    private String exchange;
-
-    private String fullname;
-
-    private String industry;
-
-    @Field("is_hs")
-    private String isHs;
-
-    @Field("list_status")
-    private String listStatus;
-
-    @Field("listing_date")
-    private String listingDate;
-
-    private String market;
-
+    @Field(type=FieldType.Keyword)
     private String name;
 
+    @Field(index = false,type = FieldType.Keyword)
+    private String area;
+
+    @Field(type=FieldType.Keyword)
+    private String code;
+
+    @Field(index = false,type = FieldType.Keyword)
+    private String currType;
+
+    @Field(type = FieldType.Text,analyzer = "ik_max_word",store = true)
+    private String enname;
+
+    @Field(index = false,type = FieldType.Keyword)
+    private String exchange;
+
+    @Field(type = FieldType.Text,analyzer = "ik_max_word",store = true)
+    private String fullname;
+
+    @Field(type=FieldType.Keyword)
+    private String industry;
+
+    @Field(type=FieldType.Keyword)
+    private String market;
+
+    @Field(type=FieldType.Keyword)
     private String symbol;
 
-    @Field("ts_code")
+    @Field(type=FieldType.Keyword)
     private String tsCode;
 
-    public MarketSecuritiesInfo() {
+
+
+    public EsStockAimport() {
     }
-
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
 
     @Override
     public boolean equals(Object o) {
@@ -76,20 +66,21 @@ public class MarketSecuritiesInfo implements Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MarketSecuritiesInfo that = (MarketSecuritiesInfo) o;
-        return Objects.equals(getStockIdentity(), that.getStockIdentity()) && Objects.equals(getArea(), that.getArea()) && Objects.equals(getCode(), that.getCode()) && Objects.equals(getCurrType(), that.getCurrType()) && Objects.equals(getEnname(), that.getEnname()) && Objects.equals(getExchange(), that.getExchange()) && Objects.equals(getFullname(), that.getFullname()) && Objects.equals(getIndustry(), that.getIndustry()) && Objects.equals(getIsHs(), that.getIsHs()) && Objects.equals(getListStatus(), that.getListStatus()) && Objects.equals(getListingDate(), that.getListingDate()) && Objects.equals(getMarket(), that.getMarket()) && Objects.equals(getName(), that.getName()) && Objects.equals(getSymbol(), that.getSymbol()) && Objects.equals(getTsCode(), that.getTsCode());
+        EsStockAimport that = (EsStockAimport) o;
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getStockIdentity(), that.getStockIdentity()) && Objects.equals(getName(), that.getName()) && Objects.equals(getArea(), that.getArea()) && Objects.equals(getCode(), that.getCode()) && Objects.equals(getCurrType(), that.getCurrType()) && Objects.equals(getEnname(), that.getEnname()) && Objects.equals(getExchange(), that.getExchange()) && Objects.equals(getFullname(), that.getFullname()) && Objects.equals(getIndustry(), that.getIndustry()) && Objects.equals(getMarket(), that.getMarket()) && Objects.equals(getSymbol(), that.getSymbol()) && Objects.equals(getTsCode(), that.getTsCode());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getStockIdentity(), getArea(), getCode(), getCurrType(), getEnname(), getExchange(), getFullname(), getIndustry(), getIsHs(), getListStatus(), getListingDate(), getMarket(), getName(), getSymbol(), getTsCode());
+        return Objects.hash(getId(), getStockIdentity(), getName(), getArea(), getCode(), getCurrType(), getEnname(), getExchange(), getFullname(), getIndustry(), getMarket(), getSymbol(), getTsCode());
     }
 
     @Override
     public String toString() {
-        return "MarketSecuritiesInfo{" +
+        return "EsStockAimport{" +
                 "id=" + id +
                 ", stockIdentity='" + stockIdentity + '\'' +
+                ", name='" + name + '\'' +
                 ", area='" + area + '\'' +
                 ", code='" + code + '\'' +
                 ", currType='" + currType + '\'' +
@@ -97,14 +88,18 @@ public class MarketSecuritiesInfo implements Serializable {
                 ", exchange='" + exchange + '\'' +
                 ", fullname='" + fullname + '\'' +
                 ", industry='" + industry + '\'' +
-                ", isHs='" + isHs + '\'' +
-                ", listStatus='" + listStatus + '\'' +
-                ", listingDate='" + listingDate + '\'' +
                 ", market='" + market + '\'' +
-                ", name='" + name + '\'' +
                 ", symbol='" + symbol + '\'' +
                 ", tsCode='" + tsCode + '\'' +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getStockIdentity() {
@@ -113,6 +108,14 @@ public class MarketSecuritiesInfo implements Serializable {
 
     public void setStockIdentity(String stockIdentity) {
         this.stockIdentity = stockIdentity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getArea() {
@@ -171,44 +174,12 @@ public class MarketSecuritiesInfo implements Serializable {
         this.industry = industry;
     }
 
-    public String getIsHs() {
-        return isHs;
-    }
-
-    public void setIsHs(String isHs) {
-        this.isHs = isHs;
-    }
-
-    public String getListStatus() {
-        return listStatus;
-    }
-
-    public void setListStatus(String listStatus) {
-        this.listStatus = listStatus;
-    }
-
-    public String getListingDate() {
-        return listingDate;
-    }
-
-    public void setListingDate(String listingDate) {
-        this.listingDate = listingDate;
-    }
-
     public String getMarket() {
         return market;
     }
 
     public void setMarket(String market) {
         this.market = market;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getSymbol() {
@@ -226,4 +197,6 @@ public class MarketSecuritiesInfo implements Serializable {
     public void setTsCode(String tsCode) {
         this.tsCode = tsCode;
     }
+
+
 }
