@@ -128,6 +128,7 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
     public int importAll() {
         int result = 0;
         try {
+            esStockUsImportRepository.deleteAll();
             List<StockUsImport> stockList = Lists.newArrayList();
             List<EsStockUsImport> esList = Lists.newArrayList();
             stockList = stockUsImportService.list();
@@ -172,7 +173,7 @@ public class StockUsImportServiceImpl  extends ServiceImpl<StockUsImportMapper, 
 
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
         if (StringUtils.isEmpty(keyword)) {
-            return new ArrayList<EsStockUsImport>();
+            return new ArrayList<>();
         } else {
             List<FunctionScoreQueryBuilder.FilterFunctionBuilder> filterFunctionBuilders = new ArrayList<>();
             filterFunctionBuilders.add(new FunctionScoreQueryBuilder.FilterFunctionBuilder(QueryBuilders.prefixQuery("symbol", keyword),

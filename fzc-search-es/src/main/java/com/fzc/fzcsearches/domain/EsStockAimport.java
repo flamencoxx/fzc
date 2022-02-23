@@ -5,14 +5,16 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.util.Objects;
+import java.io.Serializable;
 
 /**
  * @author flamenco.xxx
  * @date 2022/2/22 15:17
  */
-@Document(indexName = "stock_a",createIndex = false)
-public class EsStockAimport {
+@Document(indexName = "sa",createIndex = false)
+public class EsStockAimport  implements Serializable {
+
+    private static final long serialVersionUID = -1L;
 
     @Id
     private Long id;
@@ -20,13 +22,13 @@ public class EsStockAimport {
     @Field(type=FieldType.Keyword)
     private String stockIdentity;
 
-    @Field(type=FieldType.Keyword)
+    @Field(type=FieldType.Keyword,analyzer = "ik_max_word", store = true)
     private String name;
 
     @Field(index = false,type = FieldType.Keyword)
     private String area;
 
-    @Field(type=FieldType.Keyword)
+    @Field(type=FieldType.Keyword,store = true)
     private String code;
 
     @Field(index = false,type = FieldType.Keyword)
@@ -44,7 +46,7 @@ public class EsStockAimport {
     @Field(type=FieldType.Keyword)
     private String industry;
 
-    @Field(type=FieldType.Keyword)
+    @Field(index = false,type=FieldType.Keyword)
     private String market;
 
     @Field(type=FieldType.Keyword)
@@ -58,22 +60,6 @@ public class EsStockAimport {
     public EsStockAimport() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        EsStockAimport that = (EsStockAimport) o;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getStockIdentity(), that.getStockIdentity()) && Objects.equals(getName(), that.getName()) && Objects.equals(getArea(), that.getArea()) && Objects.equals(getCode(), that.getCode()) && Objects.equals(getCurrType(), that.getCurrType()) && Objects.equals(getEnname(), that.getEnname()) && Objects.equals(getExchange(), that.getExchange()) && Objects.equals(getFullname(), that.getFullname()) && Objects.equals(getIndustry(), that.getIndustry()) && Objects.equals(getMarket(), that.getMarket()) && Objects.equals(getSymbol(), that.getSymbol()) && Objects.equals(getTsCode(), that.getTsCode());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getStockIdentity(), getName(), getArea(), getCode(), getCurrType(), getEnname(), getExchange(), getFullname(), getIndustry(), getMarket(), getSymbol(), getTsCode());
-    }
 
     @Override
     public String toString() {

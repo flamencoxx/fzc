@@ -5,7 +5,7 @@ import cn.hutool.core.lang.Console;
 import com.fzc.fzcsearches.domain.EsStockAimport;
 import com.fzc.fzcsearches.model.StockAInfo;
 import com.fzc.fzcsearches.repository.EsStockAImportRepository;
-import com.fzc.fzcsearches.service.StockAInfoService;
+import com.fzc.fzcsearches.service.StockInfoService;
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +25,12 @@ public class importAllTest {
     private EsStockAImportRepository esDao;
 
     @Autowired
-    private StockAInfoService service;
+    private StockInfoService service;
 
 
     @Test
     public void test1(){
+        esDao.deleteAll();
         List<StockAInfo> stockList = service.list();
         List<EsStockAimport> esList = Lists.newLinkedList();
         Console.log(stockList.size());

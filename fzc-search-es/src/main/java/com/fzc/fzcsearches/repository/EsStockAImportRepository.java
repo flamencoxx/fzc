@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author flamenco.xxx
  * @date 2022/2/22 15:29
@@ -12,4 +14,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface EsStockAImportRepository extends ElasticsearchRepository<EsStockAimport,Long> {
+
+
+    List<EsStockAimport> findEsStockAimportByNameIsLike(String name);
 }
