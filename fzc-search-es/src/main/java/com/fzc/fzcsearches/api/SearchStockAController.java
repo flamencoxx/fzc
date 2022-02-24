@@ -46,7 +46,7 @@ public class SearchStockAController {
             List<EsStockAimport> newList = list.subList(0, 20);
             array.addAll(newList);
         }
-        jsonObject.put("data", array);
+        jsonObject.put("result", array);
         return ResponseEntity.ok(jsonObject);
     }
 }
