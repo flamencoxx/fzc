@@ -46,6 +46,9 @@ public class FzcStockAApplicationTest {
     @Autowired
     private StockAInfoService stockAInfoService;
 
+    @Autowired
+    private StockAInfoRepository repository;
+
 @Before
 public void before() throws Exception { 
 } 
@@ -141,6 +144,20 @@ public void testMain() throws Exception {
 
         });
     }
+
+    @Test
+    public void testMain7() throws Exception {
+//TODO: Test goes here...
+        String code = "603800";
+        boolean exit = repository.existsByCodeOrSymbolOrStockIdentityOrTsCode(
+                code,
+                code,
+                code,
+                code);
+        Console.log(exit);
+    }
+
+
 
 
 } 

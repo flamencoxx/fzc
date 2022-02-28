@@ -9,4 +9,7 @@ import com.fzc.fzcstocka.model.StockAInfo;
  */
 
 public interface StockAInfoService  extends IService<StockAInfo> {
+
+    StockAInfo searchByMoreKey(String code);
+
 }

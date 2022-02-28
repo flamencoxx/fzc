@@ -14,4 +14,16 @@ public interface StockAInfoRepository extends MongoRepository<MarketSecuritiesIn
     MarketSecuritiesInfo findMarketSecuritiesInfBySymbol(String name);
 
     MarketSecuritiesInfo findBySymbol(String symbol);
+
+    /**
+     * 判断数据库中是否存在这个数据
+     * @param code
+     * @param symbol
+     * @param stockIdentity
+     * @param tsCode
+     * @return
+     */
+    boolean existsByCodeOrSymbolOrStockIdentityOrTsCode(String code,String symbol,String stockIdentity,String tsCode);
+
+
 }
