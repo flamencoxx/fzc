@@ -43,26 +43,23 @@ public class StockAInfo {
 
     private Date listingDate;
 
+    private String marketValue;
+
     public StockAInfo() {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         StockAInfo that = (StockAInfo) o;
-        return getId() == that.getId() && Objects.equals(getStockIdentity(), that.getStockIdentity()) && Objects.equals(getName(), that.getName()) && Objects.equals(getArea(), that.getArea()) && Objects.equals(getCode(), that.getCode()) && Objects.equals(getCurrType(), that.getCurrType()) && Objects.equals(getEnname(), that.getEnname()) && Objects.equals(getExchange(), that.getExchange()) && Objects.equals(getFullname(), that.getFullname()) && Objects.equals(getIndustry(), that.getIndustry()) && Objects.equals(getMarket(), that.getMarket()) && Objects.equals(getSymbol(), that.getSymbol()) && Objects.equals(getTsCode(), that.getTsCode()) && Objects.equals(getListingDate(), that.getListingDate());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getStockIdentity(), that.getStockIdentity()) && Objects.equals(getName(), that.getName()) && Objects.equals(getArea(), that.getArea()) && Objects.equals(getCode(), that.getCode()) && Objects.equals(getCurrType(), that.getCurrType()) && Objects.equals(getEnname(), that.getEnname()) && Objects.equals(getExchange(), that.getExchange()) && Objects.equals(getFullname(), that.getFullname()) && Objects.equals(getIndustry(), that.getIndustry()) && Objects.equals(getMarket(), that.getMarket()) && Objects.equals(getSymbol(), that.getSymbol()) && Objects.equals(getTsCode(), that.getTsCode()) && Objects.equals(getListingDate(), that.getListingDate()) && Objects.equals(getMarketValue(), that.getMarketValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getStockIdentity(), getName(), getArea(), getCode(), getCurrType(), getEnname(), getExchange(), getFullname(), getIndustry(), getMarket(), getSymbol(), getTsCode(), getListingDate());
+        return Objects.hash(getId(), getStockIdentity(), getName(), getArea(), getCode(), getCurrType(), getEnname(), getExchange(), getFullname(), getIndustry(), getMarket(), getSymbol(), getTsCode(), getListingDate(), getMarketValue());
     }
 
     @Override
@@ -81,7 +78,8 @@ public class StockAInfo {
                 ", market='" + market + '\'' +
                 ", symbol='" + symbol + '\'' +
                 ", tsCode='" + tsCode + '\'' +
-                ", listingDate='" + listingDate + '\'' +
+                ", listingDate=" + listingDate +
+                ", marketValue='" + marketValue + '\'' +
                 '}';
     }
 
@@ -195,5 +193,17 @@ public class StockAInfo {
 
     public void setListingDate(Date listingDate) {
         this.listingDate = listingDate;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getMarketValue() {
+        return marketValue;
+    }
+
+    public void setMarketValue(String marketValue) {
+        this.marketValue = marketValue;
     }
 }

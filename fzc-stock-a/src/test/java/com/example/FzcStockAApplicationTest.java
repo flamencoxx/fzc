@@ -1,5 +1,6 @@
 package com.example;
 
+import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.lang.Console;
 import com.fzc.fzcstocka.FzcStockAApplication;
 import com.fzc.fzcstocka.model.MarketSecuritiesInfo;
@@ -7,6 +8,7 @@ import com.fzc.fzcstocka.model.ResultAnalyzer;
 import com.fzc.fzcstocka.model.StockAInfo;
 import com.fzc.fzcstocka.repository.ResultAnalyzerRepository;
 import com.fzc.fzcstocka.repository.StockAInfoRepository;
+import com.fzc.fzcstocka.service.FactorApiService;
 import com.fzc.fzcstocka.service.StockAInfoService;
 import com.fzc.fzcstocka.util.ResultNameUtil;
 import com.google.common.collect.Lists;
@@ -23,13 +25,13 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.List;
 
-/** 
-* FzcStockAApplication Tester. 
-* 
-* @author <Authors name> 
-* @since <pre>2�� 21, 2022</pre> 
-* @version 1.0 
-*/
+/**
+ * FzcStockAApplication Tester.
+ *
+ * @author <Authors name>
+ * @version 1.0
+ * @since <pre>2�� 21, 2022</pre>
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = FzcStockAApplication.class)
 public class FzcStockAApplicationTest {
@@ -49,35 +51,36 @@ public class FzcStockAApplicationTest {
     @Autowired
     private StockAInfoRepository repository;
 
-@Before
-public void before() throws Exception { 
-} 
+    @Autowired
+    private FactorApiService factorApiService;
 
-@After
-public void after() throws Exception { 
-} 
+    @Before
+    public void before() throws Exception {
+    }
 
-/** 
-* 
-* Method: main(String[] args) 
-* 
-*/ 
-@Test
-public void testMain() throws Exception { 
+    @After
+    public void after() throws Exception {
+    }
+
+    /**
+     * Method: main(String[] args)
+     */
+    @Test
+    public void testMain() throws Exception {
 //TODO: Test goes here...
-    String code = "000001";
-    Console.log(code);
-    MarketSecuritiesInfo stock = dao.findBySymbol(code);
-    Console.log(stock);
-}
+        String code = "000001";
+        Console.log(code);
+        MarketSecuritiesInfo stock = dao.findBySymbol(code);
+        Console.log(stock);
+    }
 
     @Test
     public void testMain2() throws Exception {
 //TODO: Test goes here...
         String analyzer = "3ee3a4ff-a2cf-4244-8f45-c319016ee16b";
         String stockIdentity = "000001.SZSE";
-        List<ResultAnalyzer> list = resultDao.findByAnalyzerAndStockIdentity(analyzer,stockIdentity);
-        list.forEach(k->{
+        List<ResultAnalyzer> list = resultDao.findByAnalyzerAndStockIdentity(analyzer, stockIdentity);
+        list.forEach(k -> {
             Console.log(k.toString());
         });
     }
@@ -87,8 +90,8 @@ public void testMain() throws Exception {
 //TODO: Test goes here...
 //        String analyzer = "3ee3a4ff-a2cf-4244-8f45-c319016ee16b";
         String stockIdentity = "600517.SSE";
-        List<ResultAnalyzer> list = resultDao.findByAnalyzerAndStockIdentity(ResultNameUtil.getCFId(),stockIdentity);
-        list.forEach(k->{
+        List<ResultAnalyzer> list = resultDao.findByAnalyzerAndStockIdentity(ResultNameUtil.getCFId(), stockIdentity);
+        list.forEach(k -> {
             Console.log(k.getPeriod().toString());
         });
     }
@@ -97,7 +100,7 @@ public void testMain() throws Exception {
     public void testMain4() throws Exception {
 //TODO: Test goes here...
         List<MarketSecuritiesInfo> list = dao.findAll();
-        list.forEach(k->{
+        list.forEach(k -> {
             Console.log(k.getName());
 
         });
@@ -108,7 +111,7 @@ public void testMain() throws Exception {
 //TODO: Test goes here...
         List<MarketSecuritiesInfo> list = dao.findAll();
         List<StockAInfo> stockList = Lists.newArrayList();
-        list.forEach(k->{
+        list.forEach(k -> {
             StockAInfo stock = new StockAInfo();
             stock.setStockIdentity(k.getStockIdentity());
             stock.setName(k.getName());
@@ -139,7 +142,7 @@ public void testMain() throws Exception {
 //TODO: Test goes here...
         List<MarketSecuritiesInfo> list = dao.findAll();
         List<StockAInfo> stockList = Lists.newArrayList();
-        list.forEach(k->{
+        list.forEach(k -> {
             Console.log(k.getName());
 
         });
@@ -158,6 +161,15 @@ public void testMain() throws Exception {
     }
 
 
+    @Test
+    public void testMain8() throws Exception {
+//TODO: Test goes here...
+        String code = "000010";
+        TimeInterval timeInterval = new TimeInterval();
+        String res = factorApiService.getRona(code);
+        Console.log(timeInterval.interval());
+        Console.log(res);
+    }
 
 
 } 
