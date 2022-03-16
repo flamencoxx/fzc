@@ -1,7 +1,6 @@
 package com.fzc.fzcstocka.service.Impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import com.fzc.fzcstocka.service.FactorApiService;
 import com.fzc.fzcstocka.service.StockAInfoService;
@@ -34,8 +33,6 @@ public class FactorApiServiceImpl implements FactorApiService {
         RestTemplate restTemplate = RestTemplateUtils.getInstance();
         JSONObject json = restTemplate.getForObject(url, JSONObject.class);
         if(ObjectUtil.isNull(json)){
-            return "";
-        }else if(StrUtil.isBlank(json.getStr(DATA))){
             return "";
         }
         String resStr = json.getStr("result");

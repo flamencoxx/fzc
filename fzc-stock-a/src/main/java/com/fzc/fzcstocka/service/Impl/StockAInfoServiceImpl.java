@@ -55,6 +55,7 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
         } catch (Exception e) {
             log.error("请求的code为无效数据");
             e.printStackTrace();
+            return null;
         }
         return stock;
     }
@@ -90,6 +91,7 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
         return stock;
     }
 
+
     @Override
     public List<StockAInfo> searchIndustryList(String code) {
         StockAInfo stock = this.findByStockIdentity(code);
@@ -103,6 +105,7 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
         return list;
     }
 
+//    把查找相关行业的股票按市值排行
     @Override
     public List<String> sortByValues(String code) {
         List<StockAInfo> list = this.searchIndustryList(code);
@@ -117,8 +120,9 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
 //        entryList.forEach(Console::log);
         List<String> resList = entryList.stream().map(Map.Entry::getKey).collect(Collectors.toList());
         Collections.reverse(resList);
+        List<String> resLimit = resList.stream().limit(10).collect(Collectors.toList());
 //        resList.forEach(Console::log);
-        return resList;
+        return resLimit;
     }
 
 

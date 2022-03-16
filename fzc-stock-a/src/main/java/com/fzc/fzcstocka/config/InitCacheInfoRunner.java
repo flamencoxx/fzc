@@ -1,9 +1,11 @@
 package com.fzc.fzcstocka.config;
 
 import com.fzc.fzcstocka.service.RedisService;
+import com.fzc.fzcstocka.service.StockAInfoService;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -18,6 +20,12 @@ public class InitCacheInfoRunner implements ApplicationRunner {
 
     @Autowired
     private RedisService redisService;
+
+    @Value("${redis.database}")
+    private String REDIS_DATABASE;
+
+    @Autowired
+    private StockAInfoService stockAInfoService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
