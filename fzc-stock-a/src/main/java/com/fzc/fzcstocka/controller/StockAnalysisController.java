@@ -4,9 +4,13 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.fzc.fzcstocka.mapper.StockAInfoMapper;
+import com.fzc.fzcstocka.model.PeerInfo;
 import com.fzc.fzcstocka.repository.ResultAnalyzerRepository;
 import com.fzc.fzcstocka.repository.StockAInfoRepository;
+import com.fzc.fzcstocka.service.FactorApiService;
+import com.fzc.fzcstocka.service.FactorPeerService;
 import com.fzc.fzcstocka.service.StockAInfoService;
+import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +18,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * @author flamenco.xxx
@@ -37,6 +46,12 @@ public class StockAnalysisController {
 
     @Autowired
     private StockAInfoRepository repository;
+
+    @Autowired
+    private FactorPeerService factorPeerService;
+
+    @Autowired
+    private FactorApiService factorApiService;
 
     /**
      * 懒得拆分了,所以代码比较臃肿,别在意
@@ -120,8 +135,22 @@ public class StockAnalysisController {
 
 //        rankingListData
         JSONArray rankingListDataJsonArray = JSONUtil.createArray();
+        List<String> peerList = stockAInfoService.sortByValues(code);
+        Future<Map<String, PeerInfo>> peerFuture = factorPeerService.AsyncGetPeer(peerList);
+        Map<String, PeerInfo> peerMap = Maps.newHashMap();
+        try {
+            peerMap = peerFuture.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Map<String, PeerInfo> finalPeerMap = peerMap;
+        peerList.forEach(k->{
+            PeerInfo info = finalPeerMap.get(k);
+            rankingListDataJsonArray.add(info);
+        });
         analysisJson.put("rankingListData", rankingListDataJsonArray);
-
 
 //        visitData
         JSONArray visitDataJsonArray = JSONUtil.createArray();

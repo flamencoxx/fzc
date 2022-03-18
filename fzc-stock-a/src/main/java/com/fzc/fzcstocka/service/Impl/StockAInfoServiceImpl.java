@@ -105,7 +105,11 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
         return list;
     }
 
-//    把查找相关行业的股票按市值排行
+    /**
+     * 把查找相关行业的股票按市值排行
+     * @param code
+     * @return
+     */
     @Override
     public List<String> sortByValues(String code) {
         List<StockAInfo> list = this.searchIndustryList(code);

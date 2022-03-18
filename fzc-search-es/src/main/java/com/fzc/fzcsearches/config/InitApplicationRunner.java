@@ -1,5 +1,6 @@
 package com.fzc.fzcsearches.config;
 
+import com.fzc.fzcsearches.service.StockInfoService;
 import com.fzc.fzcsearches.service.StockUsImportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -16,15 +17,19 @@ public class InitApplicationRunner implements ApplicationRunner {
     @Autowired
     private StockUsImportService stockUsImportService;
 
+    @Autowired
+    private StockInfoService stockInfoService;
 //    初始化Redis
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        try {
-//            stockUsImportService.importAll();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            stockUsImportService.importAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        int importAll = stockInfoService.importAll();
         int importSectorRes = stockUsImportService.importSectorToRedis();
         int importIndustryRes = stockUsImportService.importIndustryToRedis();
         int importMarketValueRes = stockUsImportService.importMarketValue();

@@ -16,6 +16,8 @@ import com.google.common.collect.Sets;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,6 +26,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Future;
 
 /**
  * @author flamenco.xxx
@@ -162,5 +165,12 @@ public class FactorPeerServiceImpl implements FactorPeerService {
         });
         Console.log(json.toString());
         return map;
+    }
+
+    @Override
+    @Async
+    public Future<Map<String, PeerInfo>> AsyncGetPeer(List<String> list) {
+        Map<String, PeerInfo> map = this.getPeerInfoMap(list);
+        return new AsyncResult<>(map);
     }
 }

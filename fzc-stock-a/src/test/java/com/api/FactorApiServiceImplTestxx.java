@@ -30,6 +30,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Future;
 
 /** 
 * FactorApiServiceImpl Tester. 
@@ -182,7 +183,24 @@ public void testGetRona() throws Exception {
 */ 
 @Test
 public void testGetRota() throws Exception { 
-//TODO: Test goes here... 
+//TODO: Test goes here...
+    List<String> list = Lists.newArrayList();
+    list.add("000001.SZSE");
+    list.add("000006.SZSE");
+    list.add("000012.SZSE");
+    list.add("000002.SZSE");
+    list.add("000004.SZSE");
+    list.add("000011.SZSE");
+    list.add("000003.SZSE");
+    list.add("000006.SZSE");
+    list.add("000015.SZSE");
+    TimeInterval timer = new TimeInterval();
+    Future<Map<String, PeerInfo>> future = factorPeerService.AsyncGetPeer(list);
+    Future<Map<String, PeerInfo>> future1 = factorPeerService.AsyncGetPeer(list);
+    Thread.sleep(200);
+    Map<String, PeerInfo> map = future.get();
+    Console.log(map);
+    Console.log(timer.interval());
 } 
 
 /** 

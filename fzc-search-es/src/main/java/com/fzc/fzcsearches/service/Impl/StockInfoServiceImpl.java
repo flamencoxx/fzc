@@ -49,7 +49,9 @@ public class StockInfoServiceImpl extends ServiceImpl<StockAInfoMapper, StockAIn
 
     @Override
     public int importAll() {
-        esDao.deleteAll();
+//        if (esDao.existsById(1L)){
+//            esDao.deleteAll();
+//        }
         List<StockAInfo> stockList = service.list();
         List<EsStockAimport> esList = Lists.newLinkedList();
         stockList.forEach(st -> {

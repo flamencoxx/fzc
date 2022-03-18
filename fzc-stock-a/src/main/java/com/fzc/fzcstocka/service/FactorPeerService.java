@@ -4,6 +4,7 @@ import com.fzc.fzcstocka.model.PeerInfo;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Future;
 
 /**
  * @author flamenco.xxx
@@ -16,4 +17,6 @@ public interface FactorPeerService {
      * @return
      */
     Map<String, PeerInfo> getPeerInfoMap(List<String> list);
+
+    Future<Map<String, PeerInfo>> AsyncGetPeer(List<String> list);
 }
