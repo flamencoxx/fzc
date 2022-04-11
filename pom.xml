@@ -15,7 +15,7 @@
     <name>fzc</name>
     <description>Demo project for Spring Boot</description>
     <modules>
-        <module>fzc-registry</module>
+<!--        <module>fzc-registry</module>-->
         <module>fzc-user</module>
         <module>fzc-stock</module>
         <module>fzc-futu</module>
@@ -24,6 +24,8 @@
         <module>fzc-stock-us</module>
         <module>fzc-search-es</module>
         <module>fzc-search-neo4j</module>
+        <module>fzc-user-shiro</module>
+        <module>fzc-stock-a</module>
 <!--        <module>fzc-security</module>-->
     </modules>
     <properties>

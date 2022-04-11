@@ -52,6 +52,7 @@ public class serviceTesting {
         String code = "ibm";
         FinancialsReported f = financialsReportService.getReportFast(code);
         System.out.println(f.toString());
+        System.out.println(f.getSymbol());
     }
 
     @Test

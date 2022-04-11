@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * @author Flamenco.xxx
  * @date 2021/6/26 13:00
+ * 以前写的代码有点烂，不过懒得改了
  */
 @CrossOrigin()
 @Slf4j
@@ -88,12 +88,6 @@ public class StockRankUsController {
 
 
 
-//        PageRequest pageable = PageRequest.of(pageIndex, pageSize, Sort.by(sort).ascending());
-//
-//        Page<StockUsInfoDo> pageResult = stockUsInfoDoRepository.findAll(pageable);
-
-
-
         log.info("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
         log.info(pageResult.toString());
 //        System.out.println("当前页码：" + pageResult.getSize()+ "总页数：" + pageResult.getTotalPages());
@@ -102,14 +96,9 @@ public class StockRankUsController {
         int allPages = pageResult.getTotalPages() * 10;
         long totalElements = pageResult.getTotalElements();
 
-
-
-
-
         JSONObject resultJson = JSONUtil.createObj();
         resultJson.put("code",200);
         resultJson.put("message","操作成功");
-
 
         if(node.equals(NODE_ALL)){
             JSONObject allJson = JSONUtil.createObj();
@@ -126,9 +115,7 @@ public class StockRankUsController {
 
             }
 
-
-
-            JSONArray array = new JSONArray();
+           JSONArray array = new JSONArray();
             for(StockUsInfoDo stockUsInfoDo:stockUsInfoDoList){
                 JSONObject singleData = JSONUtil.createObj();
 

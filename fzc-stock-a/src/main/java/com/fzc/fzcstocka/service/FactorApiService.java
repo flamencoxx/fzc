@@ -1,5 +1,9 @@
 package com.fzc.fzcstocka.service;
 
+import com.fzc.fzcstocka.model.PeerInfo;
+
+import java.util.concurrent.Future;
+
 /**
  * @author flamenco.xxx
  * @date 2022/2/28 11:16
@@ -22,4 +26,8 @@ public interface FactorApiService {
     String getOm(String code);
 
     String getNpm(String code);
+
+    PeerInfo getInfo(String code);
+
+    Future<PeerInfo> AsyncGetInfo(String code);
 }

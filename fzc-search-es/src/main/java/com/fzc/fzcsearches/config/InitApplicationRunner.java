@@ -2,6 +2,7 @@ package com.fzc.fzcsearches.config;
 
 import com.fzc.fzcsearches.service.StockInfoService;
 import com.fzc.fzcsearches.service.StockUsImportService;
+import com.fzc.fzcsearches.util.CacheUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -33,5 +34,14 @@ public class InitApplicationRunner implements ApplicationRunner {
         int importSectorRes = stockUsImportService.importSectorToRedis();
         int importIndustryRes = stockUsImportService.importIndustryToRedis();
         int importMarketValueRes = stockUsImportService.importMarketValue();
+
+
+        int i = 1;
+        while(i<20){
+            CacheUtil.testCache.put(i,CacheUtil.getRandomString(5));
+            i++;
+        }
+
+
     }
 }

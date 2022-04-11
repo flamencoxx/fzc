@@ -60,16 +60,17 @@ public class UserRegisterController {
         user.setRole("user");
         Date date = new Date();
         user.setCreateDate(String.valueOf(date));
-
+        JSONObject res = JSONUtil.createObj();
         int num = userInfoMapper.insert(user);
 //        result.put("username",userRegister.getUsername());
 //        result.put("mobile",userRegister.getMobile());
         result.put("status","ok");
         result.put("currentAuthority","user");
+        res.put("data",result);
         log.info("username="+ userRegister.getUsername() + "---num=" + num);
         log.info("phone=" + userRegister.getMobile());
         log.info("email="+ userRegister.getEmail());
-        return  ResponseEntity.ok(result);
+        return  ResponseEntity.ok(res);
     }
 
 }

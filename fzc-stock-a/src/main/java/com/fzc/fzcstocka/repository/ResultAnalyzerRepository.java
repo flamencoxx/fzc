@@ -12,4 +12,8 @@ import java.util.List;
 public interface ResultAnalyzerRepository extends MongoRepository<ResultAnalyzer,String> {
 
     List<ResultAnalyzer> findByAnalyzerAndStockIdentity(String analyzer,String stockIdentity);
+
+    List<ResultAnalyzer> findByStockIdentityAndAnalyzer(String stockIdentity,String analyzer);
+
+    List<ResultAnalyzer> findByStockIdentity(String stockIdentity);
 }

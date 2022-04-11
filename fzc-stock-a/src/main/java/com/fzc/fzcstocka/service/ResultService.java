@@ -1,8 +1,10 @@
 package com.fzc.fzcstocka.service;
 
 import com.fzc.fzcstocka.model.ResultAnalyzer;
+import com.fzc.fzcstocka.model.ScoreInfo;
 
 import java.util.List;
+import java.util.concurrent.Future;
 
 /**
  * @author flamenco.xxx
@@ -51,5 +53,10 @@ public interface ResultService {
      * @return
      */
     List<ResultAnalyzer> getAllList(String code);
+
+
+    ScoreInfo getComprehensiveCode(String code);
+
+    Future<ScoreInfo> AsyncGetComprehensiveCode(String code);
 
 }
