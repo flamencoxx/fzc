@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * @author 11615
+ * 写的很烂请忽略
  */
 @Service
 public class StockInfoServiceImpl extends ServiceImpl<StockInfoMapper, StockInfo> implements StockInfoService {

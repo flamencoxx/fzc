@@ -3,13 +3,12 @@ package com.fzc.fzcstocka;
 import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.ObjectUtil;
-import com.fzc.fzcstocka.model.PeerInfo;
-import com.fzc.fzcstocka.model.ResultAnalyzer;
-import com.fzc.fzcstocka.model.ScoreInfo;
-import com.fzc.fzcstocka.model.StockAInfo;
+import com.fzc.fzcstocka.model.*;
+import com.fzc.fzcstocka.repository.FinanceBusinessCompositionRepository;
 import com.fzc.fzcstocka.repository.ResultAnalyzerRepository;
 import com.fzc.fzcstocka.repository.StockAInfoRepository;
 import com.fzc.fzcstocka.service.FactorApiService;
+import com.fzc.fzcstocka.service.FinanceBizCompositionService;
 import com.fzc.fzcstocka.service.ResultService;
 import com.fzc.fzcstocka.service.StockAInfoService;
 import com.fzc.fzcstocka.util.ResultCache;
@@ -57,6 +56,12 @@ public class ResultTest {
 
     @Autowired
     private ResultService resultService;
+
+    @Autowired
+    private FinanceBusinessCompositionRepository financeBusinessCompositionRepository;
+
+    @Autowired
+    private FinanceBizCompositionService financeBizCompositionService;
 
 @Before
 public void before() throws Exception { 
@@ -155,5 +160,27 @@ public void testMain() throws Exception {
 
 
 
+    @Test
+    public void testMain8() throws Exception {
+//TODO: Test goes here...
+        String code = "000001.SZSE";
+        List<FinanceBusinessComposition> financeBusinessComposition = financeBusinessCompositionRepository.findFinanceBusinessCompositionByStockIdentity(code);
+        Console.log(financeBusinessComposition.size());
+        financeBusinessComposition.forEach(k->{
+            Console.log(k.toString());
+        });
+    }
+
+
+    @Test
+    public void testMain9() throws Exception {
+//TODO: Test goes here...
+        String code = "000011.SZSE";
+        List<FinanceBusinessComposition> financeBusinessComposition = financeBizCompositionService.getComposition(code);
+        Console.log(financeBusinessComposition.size());
+        financeBusinessComposition.forEach(k->{
+            Console.log(k.toString());
+        });
+    }
 
 } 

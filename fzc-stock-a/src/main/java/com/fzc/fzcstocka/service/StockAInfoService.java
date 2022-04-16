@@ -1,9 +1,12 @@
 package com.fzc.fzcstocka.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fzc.fzcstocka.DO.StockInfoDO;
 import com.fzc.fzcstocka.model.StockAInfo;
 
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.Future;
 
 /**
  * @author flamenco.xxx
@@ -21,5 +24,15 @@ public interface StockAInfoService  extends IService<StockAInfo> {
     List<StockAInfo> searchIndustryList(String code);
 
     List<String> sortByValues(String code);
+
+    String getSymbol(String code);
+
+    boolean updateSymbolCache();
+
+    StockInfoDO getStockInfoDO(String code);
+
+    Future<StockInfoDO> AsyncGetStockInfoDO(String code);
+
+    Set<String> getBigMarketValueStock();
 
 }

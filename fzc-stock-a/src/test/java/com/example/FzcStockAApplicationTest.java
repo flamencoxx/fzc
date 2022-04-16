@@ -164,7 +164,7 @@ public class FzcStockAApplicationTest {
     @Test
     public void testMain8() throws Exception {
 //TODO: Test goes here...
-        String code = "000010";
+        String code = "000010.SZSE";
         TimeInterval timeInterval = new TimeInterval();
         String res = factorApiService.getRona(code);
         Console.log(timeInterval.interval());

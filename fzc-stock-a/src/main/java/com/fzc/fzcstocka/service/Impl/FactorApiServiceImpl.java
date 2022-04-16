@@ -4,19 +4,23 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import com.fzc.fzcstocka.model.PeerInfo;
+import com.fzc.fzcstocka.model.ResAndPeriod;
 import com.fzc.fzcstocka.service.FactorApiService;
 import com.fzc.fzcstocka.service.StockAInfoService;
 import com.fzc.fzcstocka.util.RestTemplateUtils;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -30,6 +34,8 @@ import java.util.concurrent.Future;
 public class FactorApiServiceImpl implements FactorApiService {
 
     private static final String HTTP_127_0_0_1_8383 = "http://127.0.0.1:8383/";
+
+    private static final String HTTP_192_168_31_230_8383 = "http://192.168.31.230:8383/";
 
     /**
      * 资本收益率
@@ -89,7 +95,12 @@ public class FactorApiServiceImpl implements FactorApiService {
 
     private static Map<String, String> fieldMap = Maps.newHashMap();
 
+    private  static Map<String,String> fieldListMap = Maps.newHashMap();
+
     private static final Set<String> fieldSet = Sets.newHashSet(ROC_CN,RONA_CN,ROTA_CN,GM_CN,OM_CN,NPM_CN);
+
+    public static final String LD_CN = "流动比率";
+    private static final Set<String> fieldListSet = Sets.newHashSet(ROC_CN,RONA_CN,ROTA_CN,GM_CN,OM_CN,NPM_CN, LD_CN);
 
     @PostConstruct
     public void init(){
@@ -99,6 +110,15 @@ public class FactorApiServiceImpl implements FactorApiService {
         fieldMap.put(GM_CN,"gm");
         fieldMap.put(OM_CN,"om");
         fieldMap.put(NPM_CN,"npm");
+
+        fieldListMap.put(ROC_CN,"rocList");
+        fieldListMap.put(RONA_CN,"ronaList");
+        fieldListMap.put(ROTA_CN,"rotaList");
+        fieldListMap.put(GM_CN,"gmList");
+        fieldListMap.put(OM_CN,"omList");
+        fieldListMap.put(NPM_CN,"npmList");
+        fieldListMap.put(LD_CN,"ldList");
+
 
     }
 
@@ -149,7 +169,7 @@ public class FactorApiServiceImpl implements FactorApiService {
 
     @Override
     public PeerInfo getInfo(String code) {
-        String url = HTTP_127_0_0_1_8383 + GET_INFO + code;
+        String url = HTTP_192_168_31_230_8383 + GET_INFO + code;
         RestTemplate restTemplate = RestTemplateUtils.getInstance();
         JSONObject json = restTemplate.getForObject(url,JSONObject.class);
         if(ObjectUtil.isEmpty(json)){
@@ -157,6 +177,7 @@ public class FactorApiServiceImpl implements FactorApiService {
             return new PeerInfo();
         }
         JSONObject data = json.getJSONObject("data");
+        JSONObject dataList = json.getJSONObject("data_list");
         PeerInfo peerInfo = new PeerInfo();
         fieldSet.forEach(k ->{
             JSONObject resJson = data.getJSONObject(k);
@@ -184,11 +205,37 @@ public class FactorApiServiceImpl implements FactorApiService {
                 });
             }
         });
+
+        fieldListSet.forEach(k ->{
+            JSONArray resJson = dataList.getJSONArray(k);
+            if(ObjectUtil.isNotEmpty(resJson)){
+                List<ResAndPeriod> resAndPeriods = Lists.newArrayList();
+                resJson.forEach(j ->{
+                    JSONObject p = (JSONObject) j;
+                    ResAndPeriod resAndPeriod = new ResAndPeriod();
+                    resAndPeriod.setPeriod( p.getStr("period"));
+                    resAndPeriod.setRes(String.valueOf(p.get("param")));
+                    resAndPeriods.add(resAndPeriod);
+                });
+                Field name = null;
+                String fieldNameList = fieldListMap.get(k);
+                try {
+                    name = peerInfo.getClass().getDeclaredField(fieldNameList);
+                    name.setAccessible(true);
+                    name.set(peerInfo,resAndPeriods);
+                    name.setAccessible(false);
+                } catch (NoSuchFieldException | IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
         peerInfo.setCode(code);
         return peerInfo;
     }
 
     @Override
+    @Async
     public Future<PeerInfo> AsyncGetInfo(String code) {
         PeerInfo info = this.getInfo(code);
         return new AsyncResult<>(info);

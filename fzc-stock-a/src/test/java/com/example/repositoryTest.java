@@ -23,10 +23,17 @@ public class repositoryTest {
     private StockAInfoRepository dao;
 
 
+
     @Test
     public void test1() {
         String code = "000001";
         MarketSecuritiesInfo stock = dao.findBySymbol(code);
         Console.log(stock);
+    }
+
+    @Test
+    public void test2() {
+        String code = "000001";
+
     }
 }

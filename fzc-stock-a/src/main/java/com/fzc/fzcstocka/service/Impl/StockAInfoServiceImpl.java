@@ -3,27 +3,32 @@ package com.fzc.fzcstocka.service.Impl;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.lang.Console;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fzc.fzcstocka.DO.StockInfoDO;
+import com.fzc.fzcstocka.client.InfoTransformClient;
 import com.fzc.fzcstocka.mapper.StockAInfoMapper;
 import com.fzc.fzcstocka.model.StockAInfo;
 import com.fzc.fzcstocka.service.StockAInfoService;
 import com.fzc.fzcstocka.util.RestTemplateUtils;
+import com.fzc.fzcstocka.util.ResultCache;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 /**
@@ -32,23 +37,25 @@ import java.util.stream.Collectors;
  */
 @Service
 @Slf4j
-public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockAInfo> implements StockAInfoService {
-
+public class StockAInfoServiceImpl extends ServiceImpl<StockAInfoMapper, StockAInfo> implements StockAInfoService {
 
 
     public static final String HTTP_API_TUSHARE_PRO = "http://api.tushare.pro";
     public static final String TOKEN = "2cd7c1c0caf424ccbbdfad489ee875aaf02fb6565fc8a0e0ca0cae65";
 
+    @Autowired
+    private InfoTransformClient infoTransformClient;
+
     @Override
     public StockAInfo searchByMoreKey(String code) {
         QueryWrapper<StockAInfo> wrapper = new QueryWrapper<>();
-        wrapper.eq("code",code)
+        wrapper.eq("code", code)
                 .or()
                 .eq("symbol", code)
                 .or()
-                .eq("ts_code",code)
+                .eq("ts_code", code)
                 .or()
-                .eq("stock_identity",code);
+                .eq("stock_identity", code);
         StockAInfo stock = null;
         try {
             stock = this.getOne(wrapper);
@@ -97,7 +104,7 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
         StockAInfo stock = this.findByStockIdentity(code);
         String industry = stock.getIndustry();
         QueryWrapper<StockAInfo> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("industry",industry);
+        queryWrapper.eq("industry", industry);
         List<StockAInfo> list = this.list(queryWrapper);
         if (list.size() == 0) {
             return new ArrayList<>();
@@ -107,6 +114,7 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
 
     /**
      * 把查找相关行业的股票按市值排行
+     *
      * @param code
      * @return
      */
@@ -125,6 +133,74 @@ public class StockAInfoServiceImpl  extends ServiceImpl<StockAInfoMapper, StockA
         List<String> resList = entryList.stream().map(Map.Entry::getKey).collect(Collectors.toList());
         Collections.reverse(resList);
         List<String> resLimit = resList.stream().limit(10).collect(Collectors.toList());
+//        resList.forEach(Console::log);
+        return resLimit;
+    }
+
+    @Override
+    public String getSymbol(String code) {
+        QueryWrapper<StockAInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("stock_identity", code);
+        String res = this.getOne(queryWrapper).getSymbol();
+        return res;
+    }
+
+    @Override
+    public boolean updateSymbolCache() {
+        boolean result = false;
+        List<StockAInfo> list = this.list();
+        Map<String, String> map = Maps.newHashMap();
+        ResultCache resultCache = ResultCache.getInstance();
+        list.forEach(k -> {
+            map.put(k.getStockIdentity(), k.getSymbol());
+        });
+        if (map.size() != 0) {
+            result = true;
+        }
+        resultCache.symbolCache.putAll(map);
+        return result;
+    }
+
+    @Override
+    public StockInfoDO getStockInfoDO(String code) {
+        ResultCache resultCache = ResultCache.getInstance();
+        try {
+            String symbol = resultCache.symbolCache.get(code);
+            if (StrUtil.isNotBlank(symbol)) {
+                StockInfoDO stockInfoDO = infoTransformClient.findStockInfo(symbol);
+
+//                resultCache.stockInfoCache.put(code, stockInfoDO);
+
+                return stockInfoDO;
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new StockInfoDO();
+    }
+
+    @Override
+    @Async
+    public Future<StockInfoDO> AsyncGetStockInfoDO(String code) {
+        StockInfoDO stockInfo = this.getStockInfoDO(code);
+        return new AsyncResult<>(stockInfo);
+    }
+
+    @Override
+    public Set<String> getBigMarketValueStock() {
+        List<StockAInfo> list = this.list();
+//        Console.log(list.size());
+        Map<String, Long> map = Maps.newHashMap();
+        list.forEach(k -> {
+//            Console.log(k.getStockIdentity() + "==" + k.getMarketValue());
+            map.put(k.getStockIdentity(), Long.parseLong(k.getMarketValue()));
+        });
+        List<Map.Entry<String, Long>> entryList = Lists.newArrayList(map.entrySet());
+        entryList.sort(Map.Entry.comparingByValue());
+//        entryList.forEach(Console::log);
+        List<String> resList = entryList.stream().map(Map.Entry::getKey).collect(Collectors.toList());
+        Collections.reverse(resList);
+        Set<String> resLimit = resList.stream().limit(1).collect(Collectors.toSet());
 //        resList.forEach(Console::log);
         return resLimit;
     }

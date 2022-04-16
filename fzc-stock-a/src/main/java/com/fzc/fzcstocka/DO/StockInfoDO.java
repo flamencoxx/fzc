@@ -1,8 +1,9 @@
-package com.fzc.fzcfutu.DO;
+package com.fzc.fzcstocka.DO;
 
-import com.fzc.fzcfutu.mongo.IncIdEntity;
+import com.fzc.fzcstocka.mongo.IncIdEntity;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -605,16 +606,19 @@ public class StockInfoDO extends IncIdEntity<Integer> {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("StockInfoDO{");
-        sb.append("code='").append(code).append('\'');
-        sb.append(", symbol='").append(symbol).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", area='").append(area).append('\'');
-        sb.append(", industry='").append(industry).append('\'');
-        sb.append(", market='").append(market).append('\'');
-        sb.append(", listDate='").append(listDate).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "StockInfoDO{" +
+                "code='" + code + '\'' +
+                ", symbol='" + symbol + '\'' +
+                ", name='" + name + '\'' +
+                ", area='" + area + '\'' +
+                ", industry='" + industry + '\'' +
+                ", market='" + market + '\'' +
+                ", listDate='" + listDate + '\'' +
+                ", financialIndicators=" + financialIndicators +
+                ", financialIndicatorsList=" + financialIndicatorsList +
+                ", financialIndicatorsArray=" + Arrays.toString(financialIndicatorsArray) +
+                ", stockHistoricalDataList=" + stockHistoricalDataList +
+                '}';
     }
 
     public StockInfoDO(String code, String symbol, String name, String area, String industry, String market, String listDate) {

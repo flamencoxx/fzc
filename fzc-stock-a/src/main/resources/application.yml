@@ -18,6 +18,15 @@ xxl:
 
 
 spring:
+  task:
+    execution:
+      pool:
+        max-size: 16
+        core-size: 8
+        keep-alive: 60s
+        queue-capacity: 100
+        allow-core-thread-timeout: true
+      thread-name-prefix: async-task-executor-
   cloud:
     nacos:
       discovery:

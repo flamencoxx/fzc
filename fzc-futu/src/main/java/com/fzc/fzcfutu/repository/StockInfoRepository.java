@@ -16,5 +16,4 @@ public interface StockInfoRepository extends MongoRepository<StockInfoDO,Integer
 
 
 
-
 }
