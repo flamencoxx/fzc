@@ -9,7 +9,6 @@ import com.fzc.fzcstocka.service.FactorApiService;
 import com.fzc.fzcstocka.service.FactorPeerService;
 import com.fzc.fzcstocka.service.RedisService;
 import com.fzc.fzcstocka.service.StockAInfoService;
-import com.fzc.fzcstocka.util.RestTemplateUtils;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -124,7 +123,7 @@ public class FactorPeerServiceImpl implements FactorPeerService {
         String url5 = HTTP_127_0_0_1_8383 + GET_OM_PEER + joinStr;
         String url6 = HTTP_127_0_0_1_8383 + GET_NPM_PEER + joinStr;
         String urlAll = HTTP_127_0_0_1_8383 + GET_ALL_PEER + joinStr;
-        RestTemplate restTemplate = RestTemplateUtils.getInstance();
+        RestTemplate restTemplate = new RestTemplate();
         JSONObject json = restTemplate.getForObject(urlAll,JSONObject.class);
         if(ObjectUtil.isEmpty(json)){
             log.info("PEER重要指标返回JSON为空");

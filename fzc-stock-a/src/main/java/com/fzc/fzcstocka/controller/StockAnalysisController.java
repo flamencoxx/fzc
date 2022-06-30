@@ -132,8 +132,6 @@ public class StockAnalysisController {
             }
         });
         Future<Map<String, PeerInfo>> peerFuture = factorPeerService.AsyncGetPeer(peerLost);
-
-
         PeerInfo singlePeer = resultCache.singlePeerCache.getIfPresent(code);
         if(singlePeer != null){
             Console.log("从缓存中获取单个股票的peer信息");
@@ -142,7 +140,6 @@ public class StockAnalysisController {
         if (ObjectUtil.isEmpty(singlePeer) ||ObjectUtil.isNull(singlePeer)) {
             singlePeerInfo = factorApiService.AsyncGetInfo(code);
         }
-
 
         Future<List<FinanceBusinessComposition>> compositionFuture = financeBizCompositionService.AsyncGetComposition(code);
 
@@ -217,8 +214,9 @@ public class StockAnalysisController {
             if (ObjectUtil.isNull(singlePeer) || ObjectUtil.isEmpty(singlePeer)){
                 peerInfo = singlePeerInfo.get();
                 resultCache.singlePeerCache.put(code, peerInfo);
+            }else {
+                peerInfo =  singlePeer;
             }
-            peerInfo =  singlePeer;
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
@@ -709,7 +707,7 @@ public class StockAnalysisController {
 
 
 //        SearchData
-        JSONArray SearchDataJsonArray = JSONUtil.createArray();
+
 //        Set<String> periodSet = Sets.newHashSet();
 
 //        Map<String,String> rotaMap = Maps.newHashMap();
@@ -719,6 +717,7 @@ public class StockAnalysisController {
 //        Map<String,String> ldMap = Maps.newHashMap();
 
 
+        JSONArray SearchDataJsonArray = JSONUtil.createArray();
         List<String> periodList = Lists.newArrayList();
         Map<String,Map<String,String>> searchMap = Maps.newHashMap();
         ImmutableSet<String> immutableSet = ImmutableSet.of("rotaList","gmList","omList","npmList","ldList");
@@ -743,7 +742,7 @@ public class StockAnalysisController {
                                         periodList.add(resAndPeriod.getPeriod());
                                     }
                                     tempMap.put(resAndPeriod.getPeriod(),resAndPeriod.getRes());
-                                    field.setAccessible(true);
+                                    field.setAccessible(false);
                                 }
                             });
                         }
@@ -880,7 +879,7 @@ public class StockAnalysisController {
                         .sorted(Comparator.comparing(FinanceBusinessComposition::getPeriod).reversed())
                         .collect(Collectors.toList());
 //                System.out.println(singleProductList);
-                productMap.put(k,(double)singleProductList.get(0).getBzSales()/ 1000000000);
+                productMap.put(k,(double)singleProductList.get(0).getBzSales()/ 100000000);
             });
 
             itemSet.forEach(k -> {

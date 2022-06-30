@@ -43,6 +43,8 @@ public class StockAInfo {
 
     private Date listingDate;
 
+    private String detail;
+
     public StockAInfo() {
     }
 
@@ -83,6 +85,14 @@ public class StockAInfo {
                 ", tsCode='" + tsCode + '\'' +
                 ", listingDate='" + listingDate + '\'' +
                 '}';
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public long getId() {

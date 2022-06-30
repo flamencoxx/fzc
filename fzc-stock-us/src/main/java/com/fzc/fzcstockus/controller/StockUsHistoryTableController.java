@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.concurrent.CountDownLatch;
-
 /**
  * @author Flamenco.xxx
  * @date 2021/8/12 12:55
@@ -66,7 +64,6 @@ public class StockUsHistoryTableController {
             String symbol = code.toUpperCase();
             basicFinancialProducer.asyncSend(id,symbol);
             log.info("[basicFinancialSyncSend][发送编号：[{}] 发送成功,发送股票代号[{}]", id,symbol);
-
             // 阻塞等待，保证消费
         }else{
             log.info("查询HistoryTable不存在的股票");

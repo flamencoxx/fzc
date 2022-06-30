@@ -108,6 +108,8 @@ public class ResultCache {
     public final LoadingCache<String, StockInfoDO> stockInfoCache = CacheBuilder.newBuilder()
             .maximumSize(5000)
             .expireAfterWrite(3, TimeUnit.DAYS)
+            .expireAfterAccess(3, TimeUnit.DAYS)
+            .initialCapacity(2000)
             .recordStats()
             .build(new CacheLoader<String,StockInfoDO>() {
                 @Override

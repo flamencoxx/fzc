@@ -55,6 +55,9 @@ public class EsStockAimport  implements Serializable {
     @Field(type=FieldType.Keyword)
     private String tsCode;
 
+    @Field(type=FieldType.Keyword)
+    private String detail;
+
 
 
     public EsStockAimport() {
@@ -77,7 +80,16 @@ public class EsStockAimport  implements Serializable {
                 ", market='" + market + '\'' +
                 ", symbol='" + symbol + '\'' +
                 ", tsCode='" + tsCode + '\'' +
+                ", detail='" + detail + '\'' +
                 '}';
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public Long getId() {

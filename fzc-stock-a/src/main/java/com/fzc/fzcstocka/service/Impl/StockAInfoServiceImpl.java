@@ -200,7 +200,7 @@ public class StockAInfoServiceImpl extends ServiceImpl<StockAInfoMapper, StockAI
 //        entryList.forEach(Console::log);
         List<String> resList = entryList.stream().map(Map.Entry::getKey).collect(Collectors.toList());
         Collections.reverse(resList);
-        Set<String> resLimit = resList.stream().limit(1).collect(Collectors.toSet());
+        Set<String> resLimit = resList.stream().limit(1000).collect(Collectors.toSet());
 //        resList.forEach(Console::log);
         return resLimit;
     }
